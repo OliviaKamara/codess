@@ -105,7 +105,56 @@
             </div>
           </div>
         </section>
-        <section id="book" class="reservation"></section>
+        <section id="book" class="reservation">
+          <h2 class="reservation__title">Book a table</h2>
+          <form class="form reservation__form" action="">
+            <fieldset class="form__fieldset">
+              <label for="name" class="form__label">
+                Name *<input
+                  id="name"
+                  name="name"
+                  placeholder="Name Surname"
+                  type="text"
+                  class="form__input"
+                />
+              </label>
+              <label for="guests" class="form__label">
+                Number of guests *<input
+                  id="guests"
+                  name="guests"
+                  placeholder="1-8"
+                  type="number"
+                  min="1"
+                  max="8"
+                  class="form__input"
+                />
+              </label>
+              <label for="datetime" class="form__label">
+                Date & Time *<input
+                  id="datetime"
+                  name="datetime"
+                  placeholder="mm/dd/yyyy --:-- --"
+                  type="datetime-local"
+                  class="form__input"
+                />
+              </label>
+              <label for="email" class="form__label">
+                Your email *<input
+                  id="email"
+                  name="email"
+                  placeholder="email@email.com"
+                  type="text"
+                  class="form__input"
+                />
+              </label>
+            </fieldset>
+            <button class="form__button">Book a Table</button>
+            <label for="checkbox" class="form__label form__label_type_checkbox">
+              <input type="checkbox" class="form__checkbox" /> I agree with the
+              terms of use
+            </label>
+          </form>
+        </section>
         <section id="menu" class="menu"></section>
         <section id="contacts" class="about"></section>
       </main>
