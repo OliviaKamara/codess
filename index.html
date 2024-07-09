@@ -7,7 +7,7 @@
     <meta name="author" content="Olivia Kamara" />
     <meta name="keywords" content="coffee, triple peaks" />
     <link rel="stylesheet" href="pages/index.css" />
-    <link rel="icon" href="favicon.ico/" />
+    <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,7 +41,7 @@
           </ul>
         </nav>
         <h1 class="header__title">
-          <span class="header__span-accent">Speacialty coffee</span>in the
+          <span class="header__title_span-accent">Specialty coffee</span> in the
           Triple Peaks Library
         </h1>
         <p class="header__description">
@@ -55,10 +55,8 @@
         />
         <div class="header__footer">
           <div>
-            <p class="header__footer header__footer_hours">Hours</p>
-            <p class="header__footer header__footer_hours">
-              Monday - Friday (10:00 - 19:00)
-            </p>
+            <p class="header__paragraph">Hours</p>
+            <p class="header__paragraph">Monday - Friday (10:00 - 19:00)</p>
             <p class="header__footer header__footer_hours">
               Saturday - Sunday (10:00 - 19:00)
             </p>
@@ -115,6 +113,7 @@
                   placeholder="Name Surname"
                   type="text"
                   class="form__input"
+                  required
                 />
               </label>
               <label for="guests" class="form__label">
@@ -126,6 +125,7 @@
                   min="1"
                   max="8"
                   class="form__input"
+                  required
                 />
               </label>
               <label for="datetime" class="form__label">
@@ -133,6 +133,7 @@
                   id="datetime"
                   type="datetime-local"
                   class="form__input"
+                  required
                 />
               </label>
               <label for="email" class="form__label">
@@ -142,13 +143,19 @@
                   placeholder="email@email.com"
                   type="text"
                   class="form__input"
+                  required
                 />
               </label>
             </fieldset>
-            <button class="form__button">Book a Table</button>
+            <button type="submit" class="form__button">Book a Table</button>
             <label for="checkbox" class="form__label form__label_type_checkbox">
-              <input id="checkbox" type="checkbox" class="form__checkbox" /> I
-              agree with the terms of use
+              <input
+                id="checkbox"
+                type="checkbox"
+                class="form__checkbox"
+                required
+              />
+              I agree with the terms of use
             </label>
           </form>
         </section>
@@ -229,11 +236,9 @@
           </ul>
         </section>
         <section id="contacts" class="about">
-          <div class="about__left">
-            <h2 class="about__title">About the coffee shop</h2>
-            <div class="about__circle"></div>
-            <div class="about__circle_animation_blurred"></div>
-          </div>
+          <h2 class="about__title">About the coffee shop</h2>
+          <div class="about__circle"></div>
+          <div class="about__circle_animation_blurred"></div>
           <div class="about__content">
             <p class="about__paragraph">
               Our coffee shop is located in the Triple Peaks Library. It

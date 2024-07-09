@@ -21,6 +21,7 @@
   box-sizing: border-box;
   padding: 100px 80px;
   color: #fff;
+  justify-content: space-between;
 }
 
 .about__title {
@@ -45,7 +46,7 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 }
 
 .about__circle {

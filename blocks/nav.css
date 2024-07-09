@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  position: relative;
+  height: 39px;
+  width: 105px;
+  margin: 30px 30px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: #2f90ed;
+}
