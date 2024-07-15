@@ -22,7 +22,7 @@
   line-height: 72px;
   letter-spacing: -0.6px;
   max-width: 729px;
-  margin: 183px 0 0 80px;
+  margin: 114px 0 0 50px;
   z-index: 10;
 }
 
@@ -35,6 +35,7 @@
   font-size: 60px;
   line-height: 72px;
   padding-bottom: 0px;
+  margin-left: 0px;
 }
 
 .header__description {
@@ -44,7 +45,7 @@
   font-size: 20px;
   line-height: 30px;
   max-width: 683px;
-  margin: 28px 0 0 80px;
+  margin: 28px 0 0 50px;
   padding-top: 0px;
   z-index: 10;
 }
@@ -59,7 +60,6 @@
 }
 
 .header__footer {
-  margin-top: auto;
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -70,16 +70,17 @@
   align-items: flex-end;
   justify-content: space-between;
   box-sizing: border-box;
+  margin: auto 50px 0;
 }
 
 .header__paragraph {
-  font-family: "Inter, Arial, sans-serif";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: #838383;
-  margin: auto 80px 0 80px;
+  margin: 0;
 }
 
 .header__paragraph:last-child {
