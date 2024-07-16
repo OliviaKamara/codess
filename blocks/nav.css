@@ -21,6 +21,7 @@
   text-decoration: none;
   color: #000;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 .nav__link:hover {

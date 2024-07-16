@@ -26,7 +26,7 @@
   z-index: 10;
 }
 
-.header__title__span-accent {
+.header__span-accent {
   display: block;
   color: #2f90ed;
   font-style: italic;
@@ -81,8 +81,4 @@
   line-height: 20px;
   color: #838383;
   margin: 0;
-}
-
-.header__paragraph:last-child {
-  margin-bottom: 40px;
 }
