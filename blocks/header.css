@@ -35,7 +35,8 @@
   font-size: 60px;
   line-height: 72px;
   padding-bottom: 0px;
-  margin-left: 0px;
+  margin: 114px 0 0 0;
+  max-width: 729px;
 }
 
 .header__description {
