@@ -1,0 +1,18 @@
+.footer {
+  background-color: #0e213c;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__content {
+  font-family: "Orbitron", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0 150px;
+  margin: 0 0 0;
+  color: #f008f8;
+}
