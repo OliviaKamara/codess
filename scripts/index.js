@@ -18,17 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll(".copy-item").forEach((item) => {
   item.addEventListener("click", () => {
     const textToCopy = item.getAttribute("data-copy");
-    const tooltip = item.nextElementSibling; // Target the tooltip next to the copy-item
+    const tooltip = item.nextElementSibling;
 
-    // Copy text to clipboard
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
-        // Change tooltip text to "Copied!"
         tooltip.textContent = "Copied!";
-        tooltip.classList.add("copied"); // Add class for style change
+        tooltip.classList.add("copied");
 
-        // Reset tooltip back to "Copy" after 2 seconds
         setTimeout(() => {
           tooltip.textContent = "Copy";
           tooltip.classList.remove("copied");
