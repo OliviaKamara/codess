@@ -46,6 +46,15 @@
   font-size: 25px;
 }
 
+.resume__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my__resume {
+  height: 100vh;
+}
+
 @media screen and (max-width: 1024px) {
   .content__heading {
     margin-top: -20px;
