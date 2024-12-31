@@ -3,3 +3,9 @@
   min-height: 100vh;
   max-width: 100%;
 }
+
+@media screen and (max-width: 1024px) {
+  .page {
+    background-color: #0f203b;
+  }
+}
