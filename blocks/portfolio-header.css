@@ -33,7 +33,7 @@
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 627px) {
   .header {
     position: relative;
     z-index: 1;

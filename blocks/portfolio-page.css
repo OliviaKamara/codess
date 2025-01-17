@@ -4,7 +4,7 @@
   max-width: 100%;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 627px) {
   .page {
     background-color: #0f2444;
   }

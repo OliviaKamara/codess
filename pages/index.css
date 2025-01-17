@@ -86,7 +86,7 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 627px) {
   .header {
     margin-top: 50px;
     padding: 20px;
