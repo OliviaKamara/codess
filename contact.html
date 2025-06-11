@@ -43,56 +43,75 @@
     <div class="content__heading_container">
       <h1 class="content__heading">GET IN TOUCH</h1>
     </div>
-    <h2 class="content__sub-heading">
-      No form due to github static hosting :'(
-    </h2>
-    <h6 class="content__supersub-heading">very, very sad</h6>
-    <div class="content__info">
-      <div class="copy-container">
-        <span class="copy-item email" data-copy="codess.dev@gmail.com">
-          &lt; Email: codess.dev@gmail.com /&gt;
-        </span>
-        <span class="tooltip">Copy</span>
-      </div>
-      <div class="copy-container">
-        <span class="copy-item phone" data-copy="(989)-385-2238">
-          &lt; Phone: (989)-385-2238 /&gt;
-        </span>
-        <span class="tooltip">Copy</span>
-      </div>
-    </div>
+    <div class="form__wrapper">
+      <form
+        class="contact__form"
+        action="https://formspree.io/f/mzzgrdrr"
+        method="POST"
+      >
+     <div class="form__row">
+  <div class="form__field">
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" id="first_name" required />
+  </div>
+  <div class="form__field">
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" id="last_name" required />
+  </div>
+</div>
 
-    <div class="content__links">
-      <a
-        class="content__link"
-        href="https://www.linkedin.com/in/olivia-kamara-76820530b/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >LinkedIn</a
-      >
-      <a
-        class="content__link"
-        href="https://github.com/OliviaKamara?tab=repositories"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Github</a
-      >
-      <a
-        class="content__link"
-        href="https://www.instagram.com/_codess_/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Instagram</a
-      >
-      <a
-        class="content__link"
-        href="https://www.facebook.com/profile.php?id=61571973302224"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Facebook</a
-      >
-    </div>
+<div class="form__field">
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" required />
+</div>
+
+<div class="form__field">
+  <label for="message">Message:</label>
+  <textarea name="message" id="message" required></textarea>
+</div>
+
+<div class="form__field">
+  <button class="form__button" type="submit">Send</button>
+</div>
     <footer class="footer">
+    <div class="content__links">
+  <a
+    class="content__link"
+    href="https://www.linkedin.com/in/olivia-kamara-76820530b"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img class="social__icon"  src="images/linkedin.png" alt="LinkedIn" />
+  </a>
+
+  <a
+    class="content__link"
+    href="https://github.com/OliviaKamara?tab=repositories"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img class="social__icon" src="images/github.png" alt="GitHub" />
+  </a>
+
+  <a
+    class="content__link"
+    href="https://www.instagram.com/codess.tech/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img class="social__icon"  src="images/instagram.png" alt="Instagram" />
+  </a>
+
+  <a
+    class="content__link"
+    href="https://www.facebook.com/profile.php?id=61571973302224"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img class="social__icon" src="images/facebook.png" alt="Facebook" />
+  </a>
+</div>
+  
       <p class="footer__content">2025 &copy; Codess</p>
     </footer>
     <script src="./scripts/index.js"></script>

@@ -4,6 +4,33 @@
   padding: 0;
 }
 
+.social__icon {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.2s ease;
+}
+
+.content__links {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__link {
+  color: #9de9f5;
+}
+
+.content__link img:hover {
+  transform: scale(1.2) translateY(-2px);
+}
+
+.content__link:hover {
+  color: #f008f8;
+  cursor: url(../images/star-5pt-outline.svg) 12 12, auto;
+}
+
 .footer__content {
   font-family: "Orbitron", sans-serif;
   font-weight: normal;
