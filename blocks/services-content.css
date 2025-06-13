@@ -1,0 +1,94 @@
+.contact__button_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.contact__button {
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1c094b;
+  background: linear-gradient(to bottom, #f008f8, #9de9f5);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(240, 8, 248, 0.3);
+  transition: all 0.3s ease;
+  font-family: "Orbitron", sans-serif;
+}
+
+.contact__button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(157, 233, 245, 0.5);
+}
+
+.services {
+  padding: 100px 20px;
+  color: #0f2444;
+  text-align: center;
+  color: #fff;
+}
+
+.services__title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 48px;
+  color: #9de9f5;
+  margin-bottom: 60px;
+  text-shadow: 0 0 15px #f008f8;
+}
+
+.services__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service__card {
+  border: 2px solid #82f4ff;
+  border-radius: 15px;
+  padding: 30px 20px;
+  background-color: rgba(0, 0, 51, 0.6);
+  box-shadow: 0 0 15px rgba(130, 244, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(240, 8, 248, 0.5);
+}
+
+.service__icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.service__title {
+  font-size: 24px;
+  font-family: "Orbitron", sans-serif;
+  color: #ea07ea;
+  margin-bottom: 10px;
+}
+
+.service__description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .services__cards {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .service__card {
+    width: 30%;
+  }
+}

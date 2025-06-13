@@ -10,8 +10,6 @@
   }
 }
 
-.content__heading_container {
-}
 .content__heading {
   background-image: linear-gradient(45deg, #9de9f5, #f008f8, #9de9f5);
   background-size: 100% 100%;
@@ -247,6 +245,7 @@
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(157, 233, 245, 0.5);
 }
+
 @media screen and (max-width: 627px) {
   .content__heading {
     z-index: 2;
@@ -298,5 +297,8 @@
     max-width: 288px;
     z-index: 2;
     position: relative;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

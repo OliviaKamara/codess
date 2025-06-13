@@ -1,0 +1,323 @@
+@keyframes moveRightLeft {
+  0% {
+    left: 100%; /* start from the right side */
+    transform: translateY(-50%) rotate(0deg);
+  }
+  45% {
+    left: -450px; /* close to the text on the left side */
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    left: 20px;
+    transform: translateY(-50%) rotate(5deg); /* wobble right */
+  }
+  55% {
+    left: 20px;
+    transform: translateY(-50%) rotate(10deg);
+  }
+  60% {
+    left: 20px;
+    transform: translateY(-50%) rotate(5deg);
+  }
+  65% {
+    left: 20px;
+    transform: translateY(-50%) rotate(10deg);
+  }
+  70% {
+    left: 20px;
+    transform: translateY(-50%) rotate(5deg);
+  }
+  75% {
+    left: 20px;
+    transform: translateY(-50%) rotate(0deg); /* settle back */
+  }
+  100% {
+    left: 100%; /* back to right */
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+.mission-image {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 150px;
+  overflow: visible;
+  margin-top: 150px;
+}
+
+.alien-caption-box {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  margin-top: 100px;
+  border: 2px solid #82f4ff;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 51, 0.6);
+  box-shadow: 0 0 10px #82f4ff;
+}
+
+.alien-caption {
+  margin: 0;
+  color: #ff66ff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.alien-loop {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  top: 50%;
+  left: 450px; /* starting position */
+  transform: translateY(-50%);
+  animation: moveRightLeft 6s ease-in-out infinite;
+}
+
+.portfolio-hero {
+  background: #0f2444;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.portfolio-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 60px;
+  background: linear-gradient(45deg, #9de9f5, #f008f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.portfolio-tagline {
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  color: #9de9f5;
+}
+
+.portfolio-section {
+  padding: 60px 20px;
+  background-color: #0f2444;
+}
+
+.section-heading {
+  font-family: "Orbitron", sans-serif;
+  color: #9de9f5;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.contact__button_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  padding-bottom: 30px;
+  background: radial-gradient(circle at center, #000 0%, #0f2444 200%);
+}
+
+.contact__button {
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1c094b;
+  background: linear-gradient(to bottom, #f008f8, #9de9f5);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(240, 8, 248, 0.3);
+  transition: all 0.3s ease;
+  font-family: "Orbitron", sans-serif;
+}
+
+.contact__button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(157, 233, 245, 0.5);
+}
+.mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 1rem;
+  background-color: #0f2444;
+  background: url(../images/space-7710978_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.mission-text {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #82f4ff;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 51, 0.6);
+  box-shadow: 0 0 10px #82f4ff;
+}
+
+.mission-text h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #d8b4fe; /* Tailwind's purple-300 equivalent */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.mission-text p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.mission-text .subtext {
+  font-size: 1rem;
+  color: #ea07ea; /* Tailwind's gray-400 equivalent */
+  font-style: italic;
+}
+
+.mission-image {
+  width: 100%;
+  max-width: 400px;
+}
+
+.mission-image img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.enter-void {
+  position: relative;
+  height: 100vh;
+  background: radial-gradient(circle at center, #000 0%, #0f2444 200%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin-top: -60px;
+}
+
+.void-heading {
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 20px #f008f8;
+}
+
+.scroll-arrows .arrow {
+  font-size: 5rem;
+  color: #9de9f5;
+  animation: arrowBounce 1.5s infinite;
+}
+
+.scroll-arrows .arrow:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.scroll-arrows .arrow:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.portfolio-snippets {
+  background: radial-gradient(circle at center, #000 0%, #0f2444 200%);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: rgba(0, 0, 51, 0.6);
+  border: 2px solid #82f4ff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #82f4ff;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.services-preview {
+  background: radial-gradient(circle at center, #000 0%, #0f2444 200%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.services-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-card {
+  border: 2px solid #82f4ff;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 51, 0.6);
+  padding: 2rem;
+  color: #fff;
+  box-shadow: 0 0 15px #82f4ff;
+}
+.tech-stack {
+  background: radial-gradient(circle at center, #000 0%, #0f2444 200%);
+  color: #82f4ff;
+  text-align: center;
+  padding: 2rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+}
+
+/* Responsive side-by-side layout on medium+ screens */
+@media (min-width: 768px) {
+  .mission {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .mission-text,
+  .mission-image {
+    width: 48%;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-cards {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .service-card {
+    flex: 1;
+  }
+}

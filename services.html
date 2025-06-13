@@ -10,15 +10,18 @@
       content="website development, graphic design, website building, portfolio, olivia kamara, saginaw michigan, michigan, software engineer"
     />
     <link rel="icon" href="codess_favicon.ico" />
-    <link rel="stylesheet" href="./pages/about.css" />
+    <link rel="stylesheet" href="./pages/services.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Inter:wght@100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Major+Mono+Display&family=Metamorphous&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
       rel="stylesheet"
     />
-    <title>About Codess</title>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <title>Codess HQ</title>
   </head>
+
   <body class="page">
     <header class="header">
       <nav class="nav">
@@ -39,7 +42,7 @@
 
         <!-- Desktop nav links right -->
         <div class="nav__group nav__group--right desktop-only">
-          <a href="./services.html" class="nav__link">SERVICES</a>
+          <a href="./about.html" class="nav__link">ABOUT</a>
           <a href="./contact.html" class="nav__link">CONTACT</a>
         </div>
 
@@ -53,83 +56,66 @@
         <!-- Slide-out mobile nav -->
         <ul class="nav__links mobile-only" id="mobileMenu">
           <li><a href="./headquarters.html" class="nav__link">HOME</a></li>
-          <li><a href="./services.html" class="nav__link">SERVICES</a></li>
           <li><a href="./portfolio.html" class="nav__link">CREATIONS</a></li>
+          <li><a href="./about.html" class="nav__link">ABOUT</ABbr></a></li>
           <li><a href="./contact.html" class="nav__link">CONTACT</a></li>
         </ul>
       </nav>
     </header>
-    <div class="content__heading_container">
-      <h1 class="content__heading">ABOUT CODESS</h1>
+<section class="services">
+  <h2 class="services__title" data-aos="fade-down">Our Services</h2>
+  <div class="services__cards">
+    <div class="service__card" data-aos="fade-up">
+      <h3 class="service__icon">💻</h3>
+      <h3 class="service__title">Custom Web Development</h3>
+      <p class="service__description">
+        Bespoke websites built from scratch with clean, scalable code and a cosmic touch. 
+      </p>
     </div>
+     <div class="service__card" data-aos="fade-up">
+      <h3 class="service__icon">🌀</h3>
+      <h3 class="service__title">WordPress Solutions</h3>
+      <p class="service__description">
+        From template tweaking to full WordPress builds — perfect for rapid launch and future-proofing.
+    </p>
 
-    <div class="content__paragraph_container">
-      <div class="content__block fade-in">
-        <img
-          src="images/woman-owned.png"
-          alt="Woman-Owned Icon"
-          class="content__icon"
-        />
-        <p class="content__paragraph">
-          Codess is a woman-owned, creative and technology-driven studio
-          specializing in web design and development, graphic design, SEO
-          optimization, digital marketing, and social media content management.
-          We help businesses—both emerging and established—build impactful
-          digital identities through strategic design and scalable technology.
-        </p>
-      </div>
-
-      <div class="content__block fade-in">
-        <img src="images/webdev.png" alt="Web Dev Icon" class="content__icon" />
-        <p class="content__paragraph">
-          Our web development services range from fully custom-coded websites to
-          flexible WordPress solutions. Whether you're launching something new
-          or upgrading an existing platform, we deliver responsive,
-          high-performing websites that are built to engage and convert.
-        </p>
-      </div>
-
-      <div class="content__block fade-in">
-        <img src="images/design.png" alt="Design Icon" class="content__icon" />
-        <p class="content__paragraph">
-          Codess also offers comprehensive graphic design services that bring
-          your brand to life. From rebranding and logo creation to social media
-          graphics, brand kits, and marketing collateral, we craft cohesive
-          visuals that communicate your brand story and strengthen your presence
-          across platforms.
-        </p>
-      </div>
-
-      <div class="content__block fade-in">
-        <img src="images/seo-icon.png" alt="SEO Icon" class="content__icon" />
-        <p class="content__paragraph">
-          To ensure your business doesn’t just look good—but also gets
-          discovered—we provide SEO optimization services tailored to your
-          goals. From on-page strategies to technical site performance, we help
-          improve your visibility and connect with the right audience.
-        </p>
-      </div>
-
-      <div class="content__block fade-in">
-        <img
-          src="images/partner1.png"
-          alt="Partnership Icon"
-          class="content__icon"
-        />
-        <p class="content__paragraph">
-          Codess brings a fresh perspective to digital problem-solving—combining
-          creativity, strategy, and technical expertise. Whether you're a
-          startup or an established brand, we partner with you to create
-          solutions that are both beautiful and results-driven.
-        </p>
-      </div>
+      </p>
     </div>
+        <div class="service__card" data-aos="fade-up" data-aos-delay="150">
+      <h3 class="service__icon">🎨</h3>
+      <h3 class="service__title">Brand Identity & Design</h3>
+      <p class="service__description">
+        Visual storytelling, logos, color systems, and layouts tailored to launch your brand.
+      </p>
+    </div>
+     <div class="service__card" data-aos="fade-up">
+      <h3 class="service__icon">🔍</h3>
+      <h3 class="service__title">Search Engine Optimization</h3>
+      <p class="service__description">
+        Boost visibility with keyword-rich content, technical SEO, and meta mastery that helps you rise in the ranks.
+      </p>
+    </div>
+    <div class="service__card" data-aos="fade-up" data-aos-delay="150">
+      <h3 class="service__icon">📱</h3>
+      <h3 class="service__title">Social Media Management</h3>
+      <p class="service__description">
+Let us captain your content strategy — from scheduling and captioning to graphics and engagement.      </p>
+    </div>
+    <div class="service__card" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="service__icon">🛠</h3>
+      <h3 class="service__title">Digital Marketing</h3>
+      <p class="service__description">
+             Data-driven ad campaigns, email strategy, and digital funnels that help launch your brand into orbit.
+      </p>
+    </div>
+  </div>
+</section>
+
     <div class="contact__button_container">
       <a href="/contact.html#contact-form" class="contact__button"
         >INITIATE CONTACT</a
       >
     </div>
-
     <footer class="footer">
       <div class="content__links">
         <a
@@ -175,6 +161,24 @@
 
       <p class="footer__content">2025 &copy; Codess</p>
     </footer>
-    <script src="./scripts/index.js"></script>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger-menu");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+    </script>
+   
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
   </body>
 </html>
