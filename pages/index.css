@@ -151,7 +151,24 @@
   .header__logo_container {
     max-width: 250px;
   }
+  .alien-container {
+    margin-top: 60px;
+    height: 100px;
+    max-width: 300px;
+  }
 
+  .alien-image {
+    width: 150px;
+    max-width: 40vw;
+  }
+
+  .beam {
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid rgb(255, 0, 149);
+    top: -15px;
+    left: 10%;
+  }
   .content__button {
     font-size: 16px;
     padding: 12px 25px;
