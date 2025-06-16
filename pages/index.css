@@ -19,7 +19,11 @@
     transform: scaleY(1.1);
   }
 }
-
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .page {
   background-color: #0f2444;
   min-height: 100vh;

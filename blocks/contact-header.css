@@ -84,20 +84,20 @@
 
 @media screen and (max-width: 627px) {
   .header {
-    position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0;
-    margin: 35px;
+    margin-top: 35px;
   }
 
   .header__logo {
     max-width: 300px;
     margin-top: 10px;
   }
-
   .header__logo_container {
-    z-index: 1;
-    max-width: 300px;
-    position: relative;
+    order: 0; /* Moves the logo above the hamburger */
+    margin-bottom: 20px; /* Adds some space between the logo and hamburger */
   }
 }

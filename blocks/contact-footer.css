@@ -43,3 +43,10 @@
   margin: 0 0 0;
   color: #f008f8;
 }
+@media screen and (max-width: 627px) {
+  .social__icon {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.2s ease;
+  }
+}
