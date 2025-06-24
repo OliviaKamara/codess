@@ -93,9 +93,6 @@
     </div>
     <section class="enter-void">
   <div class="blackhole-bg">
-    <canvas id="machineRain"></canvas>
-
-    <div class="machine-code-typing" id="machineCode"></div>
     <h2 class="void-heading">Enter the Void</h2>
     <div class="scroll-arrows">
       <span class="arrow">&#8595;</span>
@@ -201,69 +198,5 @@
         mobileMenu.classList.toggle("active");
       });
     </script>
-<script>
-  window.addEventListener("load", () => {
-    const canvas = document.getElementById("machineRain");
-    const ctx = canvas.getContext("2d");
-    const fontSize = 16;
-    let columns, drops;
-
-    function resizeCanvas() {
-      // Size canvas to blackhole-bg
-      const parent = canvas.parentElement;
-      canvas.width = parent.offsetWidth;
-      canvas.height = parent.offsetHeight;
-
-      // Recalculate columns and reset drops
-      columns = Math.floor(canvas.width / fontSize);
-      drops = Array(columns).fill(1);
-    }
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#0F0";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = Math.random() > 0.5 ? "1" : "0";
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
-        ctx.fillText(text, x, y);
-
-        if (y > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-
-    function loop() {
-      draw();
-      requestAnimationFrame(loop);
-    }
-
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-    loop();
-  });
-  const rainSection = document.querySelector('.enter-void');
-const canvas = document.getElementById("machineRain");
-
-const observer = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.isIntersecting) {
-      canvas.classList.add("visible");
-    } else {
-      canvas.classList.remove("visible");
-    }
-  },
-  { threshold: 0.2 }
-);
-
-observer.observe(rainSection);
-
-</script>
-
   </body>
 </html>
