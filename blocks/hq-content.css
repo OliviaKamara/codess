@@ -1,3 +1,28 @@
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typeIn {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 34ch;
+  }
+}
+
+@keyframes blinkCursor {
+  0%,
+  100% {
+    border-color: #39ff14;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
 @keyframes moveRightLeft {
   0% {
     left: 100%; /* start from the right side */
@@ -122,6 +147,23 @@
   margin-bottom: 10px;
 }
 
+.portfolio-hq-subtitle {
+  font-family: "Orbitron", sans-serif;
+  font-size: 22px;
+  color: #39ff14;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.6px #000;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #39ff14;
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  position: relative;
+}
+
 .portfolio-tagline {
   font-family: "Orbitron", sans-serif;
   font-size: 20px;
@@ -131,6 +173,34 @@
 .portfolio-section {
   padding: 60px 20px;
   background-color: #0f2444;
+}
+
+.portfolio-hq-subtitle::before,
+.portfolio-hq-subtitle::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  -webkit-text-stroke: 0.6px #000; /* Keep outline for glitch layers too */
+  text-transform: uppercase;
+}
+
+.portfolio-hq-subtitle::before {
+  color: #f008f8; /* pink */
+  z-index: -1;
+  animation: glitch1 2s infinite linear alternate-reverse;
+}
+
+.portfolio-hq-subtitle::after {
+  color: #c069ff; /* purple */
+  z-index: -1;
+  animation: glitch2 3s infinite linear alternate-reverse;
+}
+.no-animation-on-mobile {
+  word-break: break-word;
+  text-align: center;
 }
 
 .section-heading {
@@ -373,6 +443,34 @@
   padding: 2rem;
   font-family: "Orbitron", sans-serif;
   font-size: 1rem;
+}
+
+@media (min-width: 662px) {
+  .portfolio-hq-subtitle {
+    animation: fadeIn 0.5s ease forwards 0.5s,
+      typeIn 3s steps(30, end) forwards 0.5s,
+      blinkCursor 0.7s step-end infinite 0.5s;
+  }
+}
+@media (max-width: 661px) {
+  .portfolio-hq-subtitle {
+    font-size: 16px;
+    white-space: normal;
+    width: auto !important; /* make sure it takes up natural width */
+    display: block;
+    opacity: 1 !important;
+    border-right: none !important;
+    overflow: visible;
+    position: relative; /* required for ::before/::after fallback */
+    animation: none !important;
+  }
+
+  .portfolio-hq-subtitle::before,
+  .portfolio-hq-subtitle::after {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+  }
 }
 
 /* Responsive side-by-side layout on medium+ screens */
