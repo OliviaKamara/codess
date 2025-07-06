@@ -32,17 +32,14 @@
   }
 }
 .content__heading {
-  background-image: linear-gradient(45deg, #9de9f5, #f008f8, #9de9f5);
-  background-size: 100% 100%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: gradientShift 3s ease-in-out infinite;
-  display: inline-block;
-  margin-top: 100px;
   font-family: "Orbitron", sans-serif;
-  font-weight: 500;
+  font-size: 60px;
+  color: #9de9f5;
+  margin-bottom: 50px;
+  text-shadow: 0 0 15px #f008f8;
   z-index: 2;
+  margin-top: 100px;
+  text-align: center;
 }
 .content__block {
   display: flex;
@@ -172,7 +169,8 @@
 
 @media screen and (max-width: 627px) {
   .content__heading {
-    margin-top: -20px;
+    margin-top: 20px;
+    font-size: 40px;
   }
 
   .content__paragraph_container {

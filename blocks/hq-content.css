@@ -92,6 +92,15 @@
     left: 125%;
   }
 }
+@keyframes floatShip {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 .mission-image {
   position: relative;
   width: 100%;
@@ -141,10 +150,9 @@
 .portfolio-title {
   font-family: "Orbitron", sans-serif;
   font-size: 60px;
-  background: linear-gradient(45deg, #9de9f5, #f008f8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
+  color: #9de9f5;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #f008f8;
 }
 
 .portfolio-hq-subtitle {
@@ -213,8 +221,8 @@
 .contact__button_container {
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
-  padding-bottom: 50px;
+  margin-bottom: -30px;
+  padding-bottom: 100px;
   background: radial-gradient(circle at center, #000 0%, #0f2444 200%);
 }
 
@@ -235,6 +243,7 @@
   box-shadow: 0 0 15px rgba(240, 8, 248, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: pulseGlow 2s infinite ease-in-out;
+  z-index: 1;
 }
 
 .contact__button:hover {
@@ -264,14 +273,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
   padding: 3rem 1rem;
-  background-color: #0f2444;
-  background: url(../images/space-7710978_1280.jpg);
-  background-repeat: no-repeat;
+  background: url(../images/space-7710978_1280.jpg) no-repeat center center;
   background-size: cover;
-
-  border-radius: 12px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+  border-radius: 0;
   overflow: hidden;
   color: #fff;
 }
@@ -279,6 +287,9 @@
 .mission-text {
   width: 100%;
   max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
   border: 2px solid #82f4ff;
   border-radius: 8px;
   background-color: rgba(0, 0, 51, 0.6);
@@ -308,6 +319,7 @@
 .mission-image {
   width: 100%;
   max-width: 400px;
+  margin-top: 8rem;
 }
 
 .mission-image img {
@@ -394,6 +406,7 @@
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 .project-card {
@@ -423,9 +436,9 @@
 .services-cards {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 50px;
 }
 
 .service-card {
@@ -435,6 +448,8 @@
   padding: 2rem;
   color: #fff;
   box-shadow: 0 0 15px #82f4ff;
+  width: 100%;
+  max-width: 600px;
 }
 .tech-stack {
   background: radial-gradient(circle at center, #000 0%, #0f2444 200%);
@@ -445,6 +460,48 @@
   font-size: 1rem;
 }
 
+.aliena-transmission {
+  text-align: center;
+  margin-top: 0;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  color: #c1f0f6;
+  position: relative;
+  padding: 5px;
+  background: url(../images/space-7710978_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.aliena-text {
+  max-width: 100%;
+  border: 2px solid #82f4ff;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 51, 0.781);
+  box-shadow: 0 0 10px #82f4ff;
+  padding: 0.5rem;
+  margin-top: -150px;
+}
+
+.aliena-transmission a {
+  color: #ff00ff;
+  text-decoration: underline;
+}
+.boldedname {
+  color: #0cff59;
+}
+
+.aliena-ship {
+  width: 500px;
+  height: 500px;
+  background: url("../images/alien.png") no-repeat center center;
+  background-size: contain;
+  margin: 0 auto 0rem;
+  margin-bottom: -10px;
+  animation: floatShip 3s ease-in-out infinite;
+}
+
 @media (min-width: 662px) {
   .portfolio-hq-subtitle {
     animation: fadeIn 0.5s ease forwards 0.5s,
@@ -453,6 +510,10 @@
   }
 }
 @media (max-width: 661px) {
+  .portfolio-title {
+    font-size: 40px;
+    margin-top: -50px;
+  }
   .portfolio-hq-subtitle {
     font-size: 16px;
     white-space: normal;
@@ -478,21 +539,32 @@
   .mission {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
   }
 
   .mission-text,
   .mission-image {
     width: 48%;
+    margin: 0; /* override vertical spacing on desktop */
   }
+
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+    justify-content: center;
   }
+
   .services-cards {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
 
   .service-card {
-    flex: 1;
+    flex: 0 1 300px;
+    max-width: 300px;
   }
 }

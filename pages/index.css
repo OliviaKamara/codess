@@ -39,7 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-  margin-top: 150px;
+  margin-top: 30px;
 }
 
 .header__logo_container {
@@ -180,7 +180,7 @@ body {
 }
 
 .footer {
-  margin-top: 100px;
+  margin-top: 10px;
   background-color: #0f2444;
 }
 

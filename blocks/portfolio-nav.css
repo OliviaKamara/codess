@@ -46,7 +46,6 @@
   cursor: pointer;
   z-index: 3;
   padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .hamburger-line {
@@ -79,7 +78,7 @@
 
   .hamburger-menu {
     display: flex;
-    margin-top: 320px;
+    margin-top: 200px;
   }
 }
 
