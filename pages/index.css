@@ -19,6 +19,19 @@
     transform: scaleY(1.1);
   }
 }
+@keyframes pulseUnified {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+    box-shadow: 0 0 10px #ee078ead, 0 0 20px #ee078ea0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.6;
+    box-shadow: 0 0 20px #ee078eaa, 0 0 40px #ee078eb6;
+  }
+}
 html,
 body {
   max-width: 100%;
@@ -77,29 +90,42 @@ body {
   animation: float 3s ease-in-out infinite;
   z-index: 2;
 }
+.alien-beam-wrapper {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 300px;
+  width: 100%;
+  pointer-events: none;
+}
 
 .beam {
   position: absolute;
-  top: -20px;
-  width: 0;
-  height: 0px;
-  border-left: 90px solid transparent;
-  border-right: 90px solid transparent;
-  border-bottom: 135px solid rgb(255, 0, 149); /* stronger color */
-  filter: drop-shadow(0 0 25px rgb(225, 0, 255)) blur(8px);
-  animation: pulse 2s infinite ease-in-out;
+  bottom: -150px;
+  top: -50px;
+  left: 0.5%;
   transform: translateX(-50%);
-  left: 5%;
-  z-index: 1;
+  width: 200px;
+  height: 250px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 0, 149, 0.4),
+    rgba(255, 0, 149, 0.1) 70%,
+    transparent 100%
+  );
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: pulseUnified 2s infinite ease-in-out;
   pointer-events: none;
-  transition: left 0.05s ease-out;
+  z-index: 1;
 }
 
 .content__button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: -10px;
   text-decoration: none;
 }
 
@@ -107,9 +133,9 @@ body {
   font-family: "Orbitron", sans-serif;
   padding: 15px 30px;
   font-size: 18px;
-  color: #9de9f5;
+  color: #00ff26;
   background: transparent;
-  border: 2px solid #74def8;
+  border: 2px solid #00ff26;
   border-radius: 50px;
   cursor: pointer;
   position: relative;
@@ -118,6 +144,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
+  animation: pulseUnified 2s infinite ease-in-out;
+  text-align: center;
 }
 
 .content__button::before {
@@ -146,6 +174,24 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
+.footer {
+  margin-top: 10px;
+  background-color: #0f2444;
+}
+
+.footer__content {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400px;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 60px;
+  margin: 0 0 0;
+  color: #f008f8;
+}
+
 @media screen and (max-width: 627px) {
   .header {
     margin-top: 50px;
@@ -167,32 +213,28 @@ body {
   }
 
   .beam {
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    border-bottom: 100px solid rgb(255, 0, 149);
-    top: -15px;
-    left: 10%;
-  }
-  .content__button {
-    font-size: 16px;
-    padding: 12px 25px;
+    width: 130px;
+    height: 180px;
+    top: -30px;
+    left: 8%;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 0, 149, 0.4),
+      rgba(255, 0, 149, 0.1) 70%,
+      transparent 100%
+    );
+    animation: pulseUnified 2s infinite ease-in-out;
+    filter: blur(2px); /* Optional glow */
   }
 }
-
-.footer {
-  margin-top: 10px;
-  background-color: #0f2444;
-}
-
-.footer__content {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 400px;
+.content__button {
+  margin-top: -120px;
   font-size: 16px;
-  line-height: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 60px;
-  margin: 0 0 0;
-  color: #f008f8;
+  padding: 12px 25px;
+}
+.footer {
+  margin-top: -30px;
+  background-color: #0f2444;
 }
