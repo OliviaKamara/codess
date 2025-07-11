@@ -20,7 +20,14 @@
     left: 125%;
   }
 }
-
+@keyframes shimmer {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
 .contact__button {
   position: relative;
   overflow: hidden;
@@ -140,6 +147,12 @@
   font-family: "Orbitron", sans-serif;
   color: #ea07ea;
   margin-bottom: 10px;
+  background: linear-gradient(90deg, #ff00d4, #ffffff, #ff00d4);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s infinite;
+  text-shadow: 0 0 1px #fff, 0 0 3px #ff00d4, 0 0 5px #ff00d4, 0 0 10px #ff80f4; /* soft glow edge */
 }
 
 .service__description {

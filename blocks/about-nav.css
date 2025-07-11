@@ -34,8 +34,9 @@
 }
 
 .nav__link:hover {
-  color: #f008f8;
-  cursor: url(../images/star-5pt-outline.svg) 6 6, auto;
+  text-shadow: 0 0 2px #39ff14, 0 0 6px #00ff73;
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
 .hamburger-menu {
   display: none;

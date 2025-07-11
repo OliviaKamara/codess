@@ -31,7 +31,14 @@
     left: 125%;
   }
 }
-
+@keyframes shimmer {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
 @keyframes glowPulse {
   0% {
     box-shadow: 0 0 10px #39ff14, 0 0 20px #00ffff, 0 0 30px #ff00ff;
@@ -89,9 +96,17 @@
 }
 
 .section-heading {
+  color: #ff00d4;
+  font-size: 22px;
   font-family: "Orbitron", sans-serif;
-  color: #9de9f5;
-  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #ff00d4, #ffffff, #ff00d4);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s infinite;
+  text-shadow: 0 0 1px #fff, 0 0 3px #ff00d4, 0 0 5px #ff00d4, 0 0 10px #ff80f4; /* soft glow edge */
   text-align: center;
   margin-bottom: 40px;
 }

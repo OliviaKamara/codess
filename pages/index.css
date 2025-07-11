@@ -108,7 +108,7 @@ body {
   left: 0.5%;
   transform: translateX(-50%);
   width: 200px;
-  height: 250px;
+  height: 220px;
   background: radial-gradient(
     ellipse at center,
     rgba(255, 0, 149, 0.4),
