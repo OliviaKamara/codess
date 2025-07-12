@@ -576,17 +576,22 @@
   }
 }
 
-/* Responsive side-by-side layout on medium+ screens */
+@media (max-width: 768px) {
+  .mission {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-image: url("../images/space-7710978_1280.jpg"); /* optional: force reapply bg image */
+  }
+}
+
 @media (min-width: 768px) {
   .mission {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2rem;
-    background-attachment: scroll !important;
-    background-position: center center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
   }
 
   .mission-text,
