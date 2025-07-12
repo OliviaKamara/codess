@@ -583,6 +583,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2rem;
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
   }
 
   .mission-text,
