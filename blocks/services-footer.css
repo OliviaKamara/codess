@@ -5,13 +5,12 @@
 }
 
 .social__icon {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   transition: transform 0.2s ease;
 }
 
 .content__links {
-  margin-top: 0px;
   margin-bottom: -150px;
   display: flex;
   flex-direction: row;
@@ -44,10 +43,44 @@
   margin: 0 0 0;
   color: #f008f8;
 }
-@media screen and (max-width: 627px) {
-  .social__icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.2s ease;
-  }
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
+
+.footer__title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f008f8;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.footer__contact {
+  font-family: "Orbitron", sans-serif;
+  font-size: 15px;
+  color: #00ff26;
+}
+
+.footer__link {
+  display: block;
+  color: #00ff26;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: #f008f8;
+}
+
+.footer__divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #f008f8, #00ff26);
+  margin: 20px auto;
+}
+
