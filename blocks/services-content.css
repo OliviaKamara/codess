@@ -1,17 +1,21 @@
 @keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 10px rgba(240, 8, 248, 0.4),
+    box-shadow:
+      0 0 10px rgba(240, 8, 248, 0.4),
       0 0 20px rgba(157, 233, 245, 0.3);
   }
   50% {
-    box-shadow: 0 0 20px rgba(240, 8, 248, 0.7),
+    box-shadow:
+      0 0 20px rgba(240, 8, 248, 0.7),
       0 0 40px rgba(157, 233, 245, 0.6);
   }
   100% {
-    box-shadow: 0 0 10px rgba(240, 8, 248, 0.4),
+    box-shadow:
+      0 0 10px rgba(240, 8, 248, 0.4),
       0 0 20px rgba(157, 233, 245, 0.3);
   }
 }
+
 @keyframes shine {
   0% {
     left: -75%;
@@ -20,6 +24,7 @@
     left: 125%;
   }
 }
+
 @keyframes shimmer {
   0% {
     background-position: 0%;
@@ -28,24 +33,131 @@
     background-position: 300%;
   }
 }
-.contact__button {
-  position: relative;
-  overflow: hidden;
+
+.services {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 96px 20px 72px;
+  text-align: center;
+  color: #fff;
 }
 
-.contact__button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0)
-  );
-  transform: skewX(-20deg);
+.services__eyebrow {
+  margin: 0 0 14px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0cff59;
+}
+
+.services__title {
+  max-width: 13ch;
+  margin: 0 auto 24px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 0.95;
+  color: #9de9f5;
+  text-shadow: 0 0 15px #f008f8;
+}
+
+.services__intro {
+  max-width: 860px;
+  margin: 0 auto 56px;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.services__cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.service__card {
+  grid-column: span 4;
+  border: 1px solid rgba(130, 244, 255, 0.3);
+  border-radius: 24px;
+  padding: 30px 24px;
+  background:
+    radial-gradient(circle at top, rgba(240, 8, 248, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(0, 0, 51, 0.74), rgba(6, 16, 36, 0.92));
+  box-shadow: 0 0 18px rgba(130, 244, 255, 0.16);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  text-align: left;
+}
+
+.service__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 28px rgba(240, 8, 248, 0.28);
+  border-color: rgba(240, 8, 248, 0.38);
+}
+
+.service__card--featured {
+  grid-column: span 12;
+  text-align: center;
+  padding: 38px 32px;
+}
+
+.service__icon {
+  margin: 0 0 14px;
+  font-size: 2.2rem;
+}
+
+.service__title {
+  margin: 0 0 12px;
+  font-size: 1.45rem;
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(90deg, #ff00d4, #ffffff, #ff00d4);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s infinite;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 3px #ff00d4,
+    0 0 5px #ff00d4,
+    0 0 10px #ff80f4;
+}
+
+.service__description {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.service__extra {
+  margin: 16px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(157, 233, 245, 0.9);
+}
+
+.services__qualifier {
+  max-width: 900px;
+  margin: 48px auto 0;
+  padding: 28px 24px;
+  border: 1px solid rgba(157, 233, 245, 0.2);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(11, 24, 49, 0.88), rgba(7, 14, 28, 0.95));
+  box-shadow: 0 0 20px rgba(157, 233, 245, 0.08);
+}
+
+.services__qualifier-title {
+  margin: 0 0 12px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  color: #9de9f5;
+}
+
+.services__qualifier p {
+  margin: 0;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.84);
 }
 
 .contact__button_container {
@@ -73,11 +185,6 @@
   animation: pulseGlow 2s infinite ease-in-out;
 }
 
-.contact__button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(157, 233, 245, 0.5);
-}
-
 .contact__button::before {
   content: "";
   position: absolute;
@@ -93,87 +200,53 @@
   transform: skewX(-20deg);
 }
 
+.contact__button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(157, 233, 245, 0.5);
+}
+
 .contact__button:hover::before {
   animation: shine 0.75s ease-in-out;
 }
 
-.services {
-  padding: 100px 20px;
-  color: #0f2444;
-  text-align: center;
-  color: #fff;
+@media (max-width: 900px) {
+  .service__card,
+  .service__card--featured {
+    grid-column: span 12;
+  }
 }
 
-.services__title {
-  font-family: "Orbitron", sans-serif;
-  font-size: 60px;
-  color: #9de9f5;
-  margin-top: -20px;
-  margin-bottom: 60px;
-  text-shadow: 0 0 15px #f008f8;
-}
+@media (max-width: 627px) {
+  .services {
+    padding: 72px 16px 56px;
+  }
 
-.services__cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: column;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+  .services__title {
+    font-size: clamp(2.2rem, 11vw, 3.3rem);
+    margin-top: 0;
+  }
 
-.service__card {
-  border: 2px solid #82f4ff;
-  border-radius: 15px;
-  padding: 30px 20px;
-  background-color: rgba(0, 0, 51, 0.6);
-  box-shadow: 0 0 15px rgba(130, 244, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service__card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(240, 8, 248, 0.5);
-}
-
-.service__icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.service__title {
-  font-size: 24px;
-  font-family: "Orbitron", sans-serif;
-  color: #ea07ea;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #ff00d4, #ffffff, #ff00d4);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 2.5s infinite;
-  text-shadow: 0 0 1px #fff, 0 0 3px #ff00d4, 0 0 5px #ff00d4, 0 0 10px #ff80f4; /* soft glow edge */
-}
-
-.service__description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #fff;
-}
-
-@media (min-width: 768px) {
-  .services__cards {
-    flex-direction: row;
-    justify-content: space-between;
+  .services__intro {
+    font-size: 0.98rem;
+    margin-bottom: 40px;
   }
 
   .service__card {
-    width: 30%;
+    padding: 24px 18px;
   }
-}
-@media (max-width: 627px) {
-  .services__title {
-    font-size: 40px;
-    margin-top: -80px;
+
+  .service__title {
+    font-size: 1.2rem;
+  }
+
+  .service__description,
+  .service__extra,
+  .services__qualifier p {
+    font-size: 0.95rem;
+  }
+
+  .contact__button {
+    padding: 14px 28px;
+    font-size: 16px;
   }
 }

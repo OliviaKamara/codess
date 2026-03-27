@@ -41,6 +41,7 @@
   width: 100%;
   justify-content: center;
   margin-bottom: 0.2rem;
+  align-items: center;
 }
 
 .form__field {

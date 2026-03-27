@@ -1,94 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Codess is a creative web development and design studio offering custom websites, branding, graphic design, and SEO — based in Michigan, serving nationwide."
-    />
-    <meta name="author" content="Olivia Kamara" />
-    <meta
-      name="keywords"
-      content="web development, custom websites, branding, graphic design, SEO services, Michigan web developer, digital agency, Codess"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Codess is a creative web development and design studio offering custom websites, branding, graphic design, and SEO — based in Michigan, serving nationwide."
+  />
+  <meta name="author" content="Olivia Kamara" />
+  <meta
+    name="keywords"
+    content="web development, custom websites, branding, graphic design, SEO services, Michigan web developer, digital agency, Codess"
+  />
 
-    <link rel="icon" href="codess_final_favicon.ico" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Inter:wght@100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Major+Mono+Display&family=Metamorphous&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Codess</title>
-  </head>
-  <body class="page">
-    <header class="header">
-      <div class="header__logo_container">
-        <img
-          class="header__logo"
-          src="./images/Logo 2025.gif"
-          alt="Codess Logo"
-        />
-      </div>
-    </header>
+  <link rel="icon" href="codess_final_favicon.ico" />
+  <link rel="stylesheet" href="./pages/index.css" />
 
-    <div class="alien-beam-wrapper">
-      <div class="alien-container">
-        <img src="./images/alien.png" alt="Alien" class="alien-image" />
-        <div class="beam"></div>
-      </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <title>Codess</title>
+</head>
+
+<body class="page">
+<main class="landing">
+  <section class="hero" aria-label="Codess cinematic landing scene">
+    <div class="hero__layer hero__bg" aria-hidden="true"></div>
+
+    <div class="hero__ship-wrap" aria-hidden="true">
+      <img
+        class="hero__ship"
+        src="./images/shipwithbeamfinal.png"
+        alt=""
+      />
     </div>
 
-    <div class="content__button-container">
-      <a href="headquarters.html" class="content__button" id="saucer-button">
-        Beam Me To The Mothership
-      </a>
+    <div class="hero__layer hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__transport" aria-hidden="true">
+      <div class="hero__prebeam-glow"></div>
+      <div class="hero__transport-tunnel"></div>
+      <div class="hero__transport-flash"></div>
+      <div class="hero__beam-code" id="beam-code"></div>
     </div>
 
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__contact">
-          <h3 class="footer__title">Contact Codess</h3>
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="hero__eyebrow">
+          Codess Transmission // Michigan Based // Nationwide Reach
+        </p>
 
-          <a href="tel:19896005440" class="footer__link">(989) 600-5440</a>
-          <a href="mailto:codess@codess.dev" class="footer__link">codess@codess.dev</a>
+        <h1 class="hero__title" data-text="Custom Websites For Bold Brands.">
+          Custom<br />
+          Websites<br />
+          For Bold<br />
+          Brands.
+        </h1>
 
-        </div>
-
-        <div class="footer__divider"></div>
-
-        <p class="footer__content">
-          © 2026 Codess. All rights reserved.
+        <p class="hero__subtitle">
+          Enter the mothership and explore immersive web design, branding,
+          and SEO crafted to stand out.
         </p>
       </div>
-    </footer>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Codess",
-        "image": "https://www.codess.dev/images/logo.png",
-        "url": "https://www.codess.dev",
-        "telephone": "+1-989-385-2238",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Saginaw",
-          "addressRegion": "MI",
-          "addressCountry": "US"
-        },
-        "description": "Codess is a creative studio offering custom websites, branding, SEO, and graphic design for bold businesses — based in Saginaw, MI and serving nationwide.",
-        "areaServed": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Saginaw",
-            "addressRegion": "MI",
-            "addressCountry": "US"
-          }
-        }
+    </div>
+
+    <div class="scanline" aria-hidden="true"></div>
+  </section>
+
+  <section class="interior" aria-label="Codess interior command deck">
+    <div class="interior__bg" aria-hidden="true"></div>
+    <div class="interior__glow interior__glow--left" aria-hidden="true"></div>
+    <div class="interior__glow interior__glow--right" aria-hidden="true"></div>
+
+    <section class="command" aria-label="Access the Codess command center">
+      <div class="command__shell">
+        <div class="command__top">
+          <div class="command__status-wrap">
+            <p class="command__kicker">Command Center Online</p>
+
+            <div class="command__status">
+              <span class="command__dot"></span>
+              <span>Transport Complete</span>
+            </div>
+          </div>
+
+          <div class="command__logo-wrap">
+            <img
+              class="command__logo"
+              src="./images/Logo 2025.gif"
+              alt="Codess Logo"
+            />
+          </div>
+        </div>
+
+        <div class="command__panel">
+          <p class="command__label">Primary Navigation</p>
+
+          <div class="command__cta-row">
+            <div class="command__cta command__cta--primary">
+              <a href="headquarters.html" class="command__button">
+                <span class="command__button-top">Initiate Sequence</span>
+                <span class="command__button-bottom">Access Command Center</span>
+              </a>
+
+              <div class="command__hint command__hint--primary">
+                <span class="command__arrow command__arrow--desktop">←</span>
+                <span class="command__arrow command__arrow--mobile">↓</span>
+                <span class="command__hint-text">Engage</span>
+              </div>
+            </div>
+
+            <div class="command__cta command__cta--secondary">
+              <div class="command__hint command__hint--secondary">
+                <span class="command__hint-text">Assist</span>
+                <span class="command__arrow command__arrow--desktop">→</span>
+                <span class="command__arrow command__arrow--mobile">↓</span>
+              </div>
+
+              <a href="contact.html" class="command__button command__button--secondary">
+                <span class="command__button-top">Existing Clients</span>
+                <span class="command__button-bottom">Client Support</span>
+              </a>
+            </div>
+          </div>
+
+          <p class="command__note">
+            Systems online. Continue sequence.
+          </p>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__column footer__column--left">
+        <h2 class="footer__heading">Contact Codess</h2>
+        <a href="tel:19896005440" class="footer__link">(989) 600-5440</a>
+        <a href="mailto:codess@codess.dev" class="footer__link">codess@codess.dev</a>
+      </div>
+
+      <div class="footer__column footer__column--right">
+        <h2 class="footer__heading">Signal Range</h2>
+
+        <div class="footer__meta">
+          <span class="footer__icon">⌖</span>
+          <span>Serving Earth &amp; Mars</span>
+        </div>
+
+        <div class="footer__meta">
+          <span class="footer__icon">✦</span>
+          <span>Michigan Based // Nationwide Reach</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2026 Codess // All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+  const codeContainer = document.getElementById("beam-code");
+
+  function makeBeamCode() {
+    if (!codeContainer) return;
+
+    const cols = 20;
+    const rows = 30;
+    let html = "";
+
+    for (let i = 0; i < cols; i += 1) {
+      let col = "";
+      for (let j = 0; j < rows; j += 1) {
+        col += Math.random() > 0.5 ? "1<br>" : "0<br>";
       }
-    </script>
-  </body>
+      html += `<div class="beam-code__col">${col}</div>`;
+    }
+
+    codeContainer.innerHTML = html;
+  }
+
+  makeBeamCode();
+  setInterval(makeBeamCode, 140);
+
+  window.addEventListener("load", () => {
+    const isMobile = window.matchMedia("(max-width: 680px)").matches;
+
+    const shipIntroYFrom = isMobile ? 80 : 120;
+    const shipIntroYTo = isMobile ? 28 : 40;
+    const shipIntroScaleTo = isMobile ? 0.82 : 0.74;
+
+    const shipSettleY = isMobile ? 12 : 20;
+    const shipSettleScale = isMobile ? 0.88 : 0.8;
+
+    const shipApproachScale = isMobile ? 2.1 : 2.45;
+    const shipApproachY = isMobile ? -90 : -420;
+
+    const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+    gsap.set(".interior", { opacity: 0, pointerEvents: "none" });
+    gsap.set(".command__shell", { opacity: 0, y: 40, scale: 0.98 });
+    gsap.set(".hero__transport-tunnel", { opacity: 0, scale: 0.65, rotation: 0 });
+    gsap.set(".hero__transport-flash", { opacity: 0 });
+    gsap.set(".hero__beam-code", { opacity: 0, scale: 0.9 });
+    gsap.set(".hero__prebeam-glow", { opacity: 0, scale: 0.8 });
+    gsap.set(".hero__ship-wrap", { xPercent: -50, yPercent: -50 });
+
+    tl.set(".hero__copy", { opacity: 0, y: 30 })
+      .fromTo(".hero", { opacity: 0 }, { opacity: 1, duration: 1.1 })
+      .fromTo(".hero__bg", { scale: 1.04 }, { scale: 1, duration: 2.2 }, 0)
+
+      .fromTo(
+        ".hero__ship-wrap",
+        { opacity: 0, y: shipIntroYFrom, scale: 0.58, x: 0 },
+        { opacity: 1, y: shipIntroYTo, scale: shipIntroScaleTo, x: 0, duration: 1.6 },
+        0.2
+      )
+
+      .to(".hero__copy", { opacity: 1, y: 0, duration: 1 }, 0.55)
+
+      .to({}, { duration: 0.9 })
+
+      .to(".hero__ship-wrap", {
+        y: shipSettleY,
+        scale: shipSettleScale,
+        duration: 1.0,
+        ease: "power2.out"
+      })
+
+      .to(".hero__copy", { opacity: 0, y: -20, duration: 0.7 }, ">")
+      .to(".hero__bg", {
+        scale: 1.13,
+        duration: 2.2,
+        ease: "power2.inOut"
+      }, "<")
+
+      .to(".hero__ship-wrap", {
+        scale: shipApproachScale,
+        y: shipApproachY,
+        duration: 2.0,
+        ease: "power4.in"
+      }, "<")
+
+      .to(".hero__overlay", {
+        opacity: 0.55,
+        duration: 1.6
+      }, "<")
+
+      .to(".hero__prebeam-glow", {
+        opacity: 1,
+        scale: 1.4,
+        duration: 0.6,
+        ease: "power2.in"
+      }, "-=0.35")
+      .to(".hero__prebeam-glow", {
+        opacity: 0.7,
+        duration: 0.15,
+        repeat: 2,
+        yoyo: true
+      }, ">")
+
+      .to(".hero__transport-tunnel", {
+        opacity: 1,
+        scale: 2.2,
+        duration: 2.2,
+        ease: "power4.inOut"
+      }, "-=0.15")
+      .to(".hero__beam-code", {
+        opacity: 1,
+        scale: 1.35,
+        duration: 0.8
+      }, "-=1.8")
+
+      .to({}, { duration: 1.2 })
+
+      .to(".hero__transport-flash", {
+        opacity: 1,
+        duration: 0.4
+      }, ">")
+      .to(".hero__transport-flash", {
+        opacity: 0,
+        duration: 0.5
+      }, ">")
+      .to(".hero", {
+        opacity: 0,
+        duration: 0.5
+      }, "<0.05")
+
+      .set(".interior", { opacity: 1, pointerEvents: "auto" })
+      .to(".interior", { opacity: 1, duration: 0.45 })
+      .to(".command__shell", {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.9
+      }, "-=0.1")
+
+      .call(() => {
+        const interior = document.querySelector(".interior");
+        if (interior) {
+          interior.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+
+    gsap.to(".hero__bg", {
+      xPercent: 0.3,
+      yPercent: -0.4,
+      scale: 1.04,
+      duration: 14,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    gsap.to(".hero__overlay", {
+      opacity: 0.9,
+      duration: 7,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    gsap.to(".hero__transport-tunnel", {
+      rotation: 20,
+      duration: 2.4,
+      repeat: -1,
+      ease: "none"
+    });
+
+    gsap.to(".command__dot", {
+      opacity: 0.45,
+      duration: 1,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+  });
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Codess",
+    "image": "https://www.codess.dev/images/logo.png",
+    "url": "https://www.codess.dev",
+    "telephone": "+1-989-600-5440",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sanford",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "description": "Codess is a creative studio offering custom websites, branding, SEO, and graphic design for bold businesses — based in Sanford, MI and serving nationwide.",
+    "areaServed": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sanford",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      }
+    }
+  }
+</script>
+</body>
 </html>
