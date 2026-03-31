@@ -814,6 +814,14 @@ a {
 
   .command__logo-wrap {
     max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .command__logo {
+    margin: 0 auto;
   }
 
   .command__cta-row {

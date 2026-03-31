@@ -1,163 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="codess software development" />
-    <meta name="author" content="Olivia Kamara" />
-    <meta
-      name="keywords"
-      content="website development, graphic design, website building, portfolio, olivia kamara, saginaw michigan, michigan, software engineer"
-    />
-    <link rel="icon" href="codess_final_favicon.ico" />
-    <link rel="stylesheet" href="./pages/contact.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Inter:wght@100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Major+Mono+Display&family=Metamorphous&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Contact Codess</title>
-  </head>
-  <body class="page">
-      <header class="header">
-      <nav class="nav">
-        <!-- Desktop nav links left -->
-        <div class="nav__group nav__group--left desktop-only">
-          <a href="./headquarters.html" class="nav__link">HQ</a>
-          <a href="./portfolio.html" class="nav__link">CREATIONS</a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Mission Control for Codess. Start a project, report a bug, request updates, or access client support."
+  />
+  <meta name="author" content="Olivia Kamara" />
+  <meta
+    name="keywords"
+    content="Codess client portal, website maintenance, bug report, new client intake, custom website development, Michigan web developer"
+  />
+  <link rel="icon" href="codess_final_favicon.ico" />
+  <link rel="stylesheet" href="./pages/contact.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Inter:wght@100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Major+Mono+Display&family=Metamorphous&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <title>Mission Control | Codess</title>
+</head>
 
-        <div class="header__logo_container">
-          <a href="index.html">
-            <img
-              class="header__logo"
-              src="./images/Logo 2025.gif"
-              alt="Codess Logo"
-            />
-          </a>
-        </div>
-
-        <!-- Desktop nav links right -->
-        <div class="nav__group nav__group--right desktop-only">
-          <a href="./services.html" class="nav__link">SERVICES</a>
-          <a href="./about.html" class="nav__link">ABOUT</a>
-        </div>
-
-        <!-- Hamburger button for mobile -->
-        <button class="hamburger-menu mobile-only" aria-label="Toggle menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Slide-out mobile nav -->
-        <ul class="nav__links mobile-only" id="mobileMenu">
-          <li><a href="./headquarters.html" class="nav__link">HQ</a></li>
-          <li><a href="./portfolio.html" class="nav__link">CREATIONS</a></li>
-          <li><a href="./services.html" class="nav__link">SERVICES</a></li>
-          <li><a href="./about.html" class="nav__link">ABOUT</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="content__heading_container">
-      <h1 class="content__heading">GET IN TOUCH</h1>
+<body class="page">
+<header class="header">
+  <nav class="nav">
+    <div class="nav__group nav__group--left desktop-only">
+      <a href="./headquarters.html" class="nav__link">HQ</a>
+      <a href="./portfolio.html" class="nav__link">CREATIONS</a>
     </div>
-    <div class="form__wrapper">
-      <form
-        class="contact__form"
-        action="https://formspree.io/f/mzzgrdrr"
-        method="POST"
+
+    <div class="header__logo_container">
+      <a href="index.html">
+        <img
+          class="header__logo"
+          src="./images/Logo 2025.gif"
+          alt="Codess Logo"
+        />
+      </a>
+    </div>
+
+    <div class="nav__group nav__group--right desktop-only">
+      <a href="./services.html" class="nav__link">SERVICES</a>
+      <a href="./about.html" class="nav__link">ABOUT</a>
+    </div>
+
+    <button class="hamburger-menu mobile-only" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <ul class="nav__links mobile-only" id="mobileMenu">
+      <li><a href="./headquarters.html" class="nav__link">HQ</a></li>
+      <li><a href="./portfolio.html" class="nav__link">CREATIONS</a></li>
+      <li><a href="./services.html" class="nav__link">SERVICES</a></li>
+      <li><a href="./about.html" class="nav__link">ABOUT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="portal">
+  <section class="portal__hero">
+    <p class="portal__eyebrow">CODESS TRANSMISSION HUB</p>
+    <h1 class="portal__heading">MISSION CONTROL</h1>
+    <p class="portal__subheading">
+      Select your access point. Start a project, submit a maintenance
+      request, report a system error, or enter client command.
+    </p>
+  </section>
+
+  <section class="portal__grid">
+    <article class="portal__card portal__card--primary">
+      <div class="portal__card_glow"></div>
+      <p class="portal__label">NEW CLIENT</p>
+      <h2 class="portal__title">INITIATE PROJECT</h2>
+      <p class="portal__text">
+        Ready to build something custom, strategic, and impossible to ignore?
+        Apply to work with Codess.
+      </p>
+      <a
+        href="https://tally.so/r/kd5VPd"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="portal__button portal__button--primary"
       >
-     <div class="form__row">
-  <div class="form__field">
-    <label for="first_name">First Name:</label>
-    <input type="text" name="first_name" id="first_name" required />
+        Begin Intake
+      </a>
+      <p class="portal__microcopy">
+        Serious inquiries only. Premium builds. No cookie-cutter websites.
+      </p>
+    </article>
+
+    <article class="portal__card portal__card--bug">
+      <div class="portal__card_glow"></div>
+      <div class="bugbot" aria-hidden="true">
+        <span class="bugbot__antenna bugbot__antenna--left"></span>
+        <span class="bugbot__antenna bugbot__antenna--right"></span>
+        <span class="bugbot__eye bugbot__eye--left"></span>
+        <span class="bugbot__eye bugbot__eye--right"></span>
+        <span class="bugbot__body bugbot__body--head"></span>
+        <span class="bugbot__body bugbot__body--mid"></span>
+        <span class="bugbot__body bugbot__body--tail"></span>
+        <span class="bugbot__leg bugbot__leg--1"></span>
+        <span class="bugbot__leg bugbot__leg--2"></span>
+        <span class="bugbot__leg bugbot__leg--3"></span>
+        <span class="bugbot__leg bugbot__leg--4"></span>
+      </div>
+
+      <p class="portal__label">SUPPORT</p>
+      <h2 class="portal__title">REPORT A BUG</h2>
+      <p class="portal__text">
+        Something glitching on your end? Send the issue, page details,
+        screenshots, and device info to the bug hunter.
+      </p>
+      <a
+        href="https://tally.so/r/kd5VVo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="portal__button"
+      >
+        Report System Error
+      </a>
+      <p class="portal__microcopy">
+        Intended for active Codess clients and maintenance-related issues.
+      </p>
+    </article>
+
+    <article class="portal__card">
+      <div class="portal__card_glow"></div>
+      <p class="portal__label">MAINTENANCE</p>
+      <h2 class="portal__title">REQUEST UPDATE</h2>
+      <p class="portal__text">
+        Need a text edit, image swap, link change, or other approved small
+        update? Submit your request here.
+      </p>
+      <a
+        href="https://tally.so/r/2ELqBj"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="portal__button"
+      >
+        Submit Update
+      </a>
+      <p class="portal__microcopy">
+        All requests are reviewed against your current maintenance tier.
+      </p>
+    </article>
+
+    <article class="portal__card portal__card--access">
+      <div class="portal__card_glow"></div>
+      <p class="portal__label">CLIENT ACCESS</p>
+      <h2 class="portal__title">ENTER COMMAND</h2>
+      <p class="portal__text">
+        Existing clients can access project resources, support pathways, and
+        future portal tools from here.
+      </p>
+      <a href="#" class="portal__button portal__button--ghost">Coming Soon</a>
+      <p class="portal__microcopy">
+        Future access point for project resources, status tools, and expanded
+        client support systems.
+      </p>
+    </article>
+  </section>
+
+  <section class="tiers">
+    <div class="tiers__intro">
+      <p class="tiers__eyebrow">MAINTENANCE PROTOCOLS</p>
+      <h2 class="tiers__heading">SUPPORT TIERS</h2>
+      <p class="tiers__subheading">
+        Choose the level of support your system requires. All requests are
+        evaluated against your maintenance plan. Out-of-scope work will be
+        quoted separately.
+      </p>
+    </div>
+
+    <div class="tiers__grid">
+      <article class="tier-card tier-card--observer">
+        <p class="tier-card__label">INCLUDED</p>
+        <h3 class="tier-card__title">OBSERVER</h3>
+        <p class="tier-card__price">Free</p>
+        <p class="tier-card__desc">
+          Included baseline support for Codess clients without an active monthly
+          maintenance plan.
+        </p>
+        <ul class="tier-card__list">
+          <li>Emergency bug support for major site issues</li>
+          <li>Copyright year update</li>
+          <li>One small content change per year</li>
+          <li>Best for clients who rarely need changes</li>
+        </ul>
+        <p class="tier-card__note">
+          Ongoing SEO, regular updates, and design refinements are not included.
+        </p>
+        <span class="tier-card__button tier-card__button--inactive">Included</span>
+      </article>
+
+      <article class="tier-card tier-card--operator">
+        <p class="tier-card__label">ENTRY TIER</p>
+        <h3 class="tier-card__title">OPERATOR</h3>
+        <p class="tier-card__price">$75<span>/month</span></p>
+        <p class="tier-card__desc">
+          Light monthly upkeep for businesses that need occasional maintenance
+          without ongoing growth work.
+        </p>
+        <ul class="tier-card__list">
+          <li>Up to 2 small updates per month</li>
+          <li>Text edits, image swaps, and link changes</li>
+          <li>Bug support with higher priority than Observer</li>
+          <li>Best for keeping your site current and polished</li>
+        </ul>
+        <p class="tier-card__note">
+          SEO services are not included in this tier.
+        </p>
+        <a
+          href="https://buy.stripe.com/bJe8wI1lr9IO5U11GZ4AU00"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tier-card__button"
+        >
+          Activate Operator
+        </a>
+      </article>
+
+      <article class="tier-card tier-card--commander">
+        <p class="tier-card__label">PRIORITY</p>
+        <h3 class="tier-card__title">COMMANDER</h3>
+        <p class="tier-card__price">$350<span>/month</span></p>
+        <p class="tier-card__desc">
+          Strategic ongoing support for brands that want faster turnaround, active
+          maintenance, and foundational SEO improvements.
+        </p>
+        <ul class="tier-card__list">
+          <li>Up to 6 small updates per month</li>
+          <li>Priority bug support</li>
+          <li>Minor design refinements</li>
+          <li>Monthly SEO health check</li>
+          <li>Meta title and meta description updates</li>
+          <li>On-page SEO updates for existing pages</li>
+          <li>Broken link checks and basic visibility review</li>
+        </ul>
+        <p class="tier-card__note">
+          Best for growing businesses that want support plus light SEO upkeep.
+        </p>
+        <a
+          href="https://buy.stripe.com/5kQbIU5BHcV03LT2L34AU01"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tier-card__button"
+        >
+          Upgrade to Commander
+        </a>
+      </article>
+
+      <article class="tier-card tier-card--overlord">
+        <p class="tier-card__label">ELITE</p>
+        <h3 class="tier-card__title">OVERLORD</h3>
+        <p class="tier-card__price">$500<span>/month</span></p>
+        <p class="tier-card__desc">
+          Premium ongoing optimization and priority support for brands that want
+          Codess actively improving their site performance and visibility.
+        </p>
+        <ul class="tier-card__list">
+          <li>Up to 10 small updates per month</li>
+          <li>Highest priority support + fastest turnaround</li>
+          <li>Bug fixes with top priority handling</li>
+          <li>Minor design refinements</li>
+          <li>Monthly SEO optimization on 1–2 pages</li>
+          <li>Meta title and description improvements</li>
+          <li>Internal linking optimization</li>
+          <li>Image alt text optimization</li>
+          <li>Broken link checks</li>
+          <li>Indexing and visibility checks</li>
+          <li>Monthly SEO snapshot report</li>
+          <li>Performance insights + next-step recommendations</li>
+        </ul>
+        <p class="tier-card__note">
+          Best for businesses that want ongoing improvements, stronger visibility,
+          and a hands-on digital partner.
+        </p>
+        <a
+          href="https://buy.stripe.com/14A5kwfchf38fuBbhz4AU02"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tier-card__button"
+        >
+          Enter Overlord Tier
+        </a>
+      </article>
+    </div>
+
+    <div class="tiers__note">
+      <p>
+        <strong>Small updates</strong> include text edits, image replacements,
+        link swaps, minor content-level adjustments, and other light maintenance
+        tasks. New pages, redesigns, advanced animations, custom features, blog
+        writing, full SEO campaigns, and major development work are billed
+        separately unless otherwise agreed.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__column footer__column--left">
+        <h3 class="footer__heading">Contact Codess</h3>
+        <a href="tel:19896005440" class="footer__link">(989) 600-5440</a>
+        <a href="mailto:codess@codess.dev" class="footer__link"
+        >codess@codess.dev</a
+        >
+      </div>
+
+      <div class="footer__column footer__column--right">
+        <h3 class="footer__heading">Signal Range</h3>
+
+        <div class="footer__meta">
+          <span class="footer__icon">⌖</span>
+          <span>Serving Earth &amp; Mars</span>
+        </div>
+
+        <div class="footer__meta">
+          <span class="footer__icon">✦</span>
+          <span>Michigan Based // Nationwide Reach</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__socials">
+      <a
+        href="https://www.linkedin.com/in/olivia-kamara-76820530b"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img class="social__icon" src="images/linkedin.png" alt="LinkedIn" />
+      </a>
+
+      <a
+        href="https://github.com/OliviaKamara?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img class="social__icon" src="images/github.png" alt="GitHub" />
+      </a>
+
+      <a
+        href="https://www.instagram.com/codess.tech/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img class="social__icon" src="images/instagram.png" alt="Instagram" />
+      </a>
+
+      <a
+        href="https://www.facebook.com/profile.php?id=61571973302224"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img class="social__icon" src="images/facebook.png" alt="Facebook" />
+      </a>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2026 Codess // All rights reserved.</p>
+    </div>
   </div>
-  <div class="form__field">
-    <label for="last_name">Last Name:</label>
-    <input type="text" name="last_name" id="last_name" required />
-  </div>
-</div>
+</footer>
 
-<div class="form__field">
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" required />
-</div>
-
-<div class="form__field">
-  <label for="message">Message:</label>
-  <textarea name="message" id="message" required></textarea>
-</div>
-
-<div class="form__field">
-  <button class="form__button" type="submit">Send</button>
-</div>
-        <footer class="footer">
-          <div class="footer__inner">
-            <div class="footer__top">
-              <div class="footer__column footer__column--left">
-                <h3 class="footer__heading">Contact Codess</h3>
-                <a href="tel:19896005440" class="footer__link">(989) 600-5440</a>
-                <a href="mailto:codess@codess.dev" class="footer__link"
-                >codess@codess.dev</a
-                >
-              </div>
-
-              <div class="footer__column footer__column--right">
-                <h3 class="footer__heading">Signal Range</h3>
-
-                <div class="footer__meta">
-                  <span class="footer__icon">⌖</span>
-                  <span>Serving Earth &amp; Mars</span>
-                </div>
-
-                <div class="footer__meta">
-                  <span class="footer__icon">✦</span>
-                  <span>Michigan Based // Nationwide Reach</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="footer__socials">
-              <a
-                href="https://www.linkedin.com/in/olivia-kamara-76820530b"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img class="social__icon" src="images/linkedin.png" alt="LinkedIn" />
-              </a>
-
-              <a
-                href="https://github.com/OliviaKamara?tab=repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img class="social__icon" src="images/github.png" alt="GitHub" />
-              </a>
-
-              <a
-                href="https://www.instagram.com/codess.tech/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img class="social__icon" src="images/instagram.png" alt="Instagram" />
-              </a>
-
-              <a
-                href="https://www.facebook.com/profile.php?id=61571973302224"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img class="social__icon" src="images/facebook.png" alt="Facebook" />
-              </a>
-            </div>
-
-            <div class="footer__bottom">
-              <p class="footer__copyright">© 2026 Codess // All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-    <script src="./scripts/index.js"></script>
-  </body>
+<script src="./scripts/index.js"></script>
+</body>
 </html>
