@@ -18,6 +18,32 @@
     rel="stylesheet"
   />
   <title>About Codess</title>
+
+  <style>
+    /* Small performance overrides so you do not have to edit CSS separately yet */
+    .about__crawl,
+    .about__aliena,
+    .about__portrait-wrap,
+    .about__planet {
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    .about__portrait-wrap::before {
+      filter: blur(18px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .about__stars::before,
+      .about__stars::after,
+      .about__shooting,
+      .about__portrait-wrap,
+      .about__planet {
+        animation: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="page">
@@ -74,6 +100,10 @@
           src="./images/webheadshotfinal.png"
           alt="Olivia Kamara"
           class="about__portrait"
+          width="320"
+          height="320"
+          decoding="async"
+          fetchpriority="high"
         />
 
         <div class="about__planet about__planet--one"></div>
@@ -88,6 +118,9 @@
           alt="Aliena"
           class="about__aliena"
           id="aboutAliena"
+          width="72"
+          height="72"
+          decoding="async"
         />
       </div>
     </div>
@@ -218,165 +251,173 @@
   window.addEventListener("load", () => {
     const wrap = document.getElementById("aboutCrawlWrap");
     const crawl = document.getElementById("aboutCrawl");
+    const system = document.getElementById("aboutSystem");
+    const aliena = document.getElementById("aboutAliena");
 
-    if (wrap && crawl) {
-      const clone = crawl.cloneNode(true);
-      clone.removeAttribute("id");
-      wrap.appendChild(clone);
+    let crawlRAF = null;
+    let orbitRAF = null;
 
-      let y = 180;
-      let lastTime = null;
-      let singleHeight = 0;
+    function initCrawl() {
+      if (!wrap || !crawl) return;
 
-      function refresh() {
-        crawl.style.transform = "translateX(-50%)";
-        clone.style.transform = "translateX(-50%)";
-        singleHeight = crawl.offsetHeight;
-        clone.style.top = `${singleHeight}px`;
+      let y = 140;
+      let lastTime = 0;
+      let contentHeight = 0;
+
+      function refreshCrawl() {
+        contentHeight = crawl.offsetHeight;
       }
 
-      refresh();
-      window.addEventListener("resize", refresh);
-
-      function animate(timestamp) {
+      function animateCrawl(timestamp) {
         if (!lastTime) lastTime = timestamp;
         const delta = timestamp - lastTime;
         lastTime = timestamp;
 
-        const speed = 0.04;
-        y -= delta * speed;
+        const speed = 80;
+        y -= (delta / 1000) * speed;
 
-        if (Math.abs(y) >= singleHeight) {
-          y = 0;
+        if (contentHeight > 0 && Math.abs(y) > contentHeight + 120) {
+          y = wrap.offsetHeight * 0.35;
         }
 
         crawl.style.transform = `translateX(-50%) translateY(${y}px)`;
-        clone.style.transform = `translateX(-50%) translateY(${y}px)`;
-
-        requestAnimationFrame(animate);
+        crawlRAF = requestAnimationFrame(animateCrawl);
       }
 
-      requestAnimationFrame(animate);
-    }
-  });
-</script>
-
-<script>
-  window.addEventListener("load", () => {
-    const system = document.getElementById("aboutSystem");
-    const aliena = document.getElementById("aboutAliena");
-
-    if (!system || !aliena) return;
-
-    const planets = [
-      system.querySelector(".about__planet--one"),
-      system.querySelector(".about__planet--two"),
-      system.querySelector(".about__planet--three"),
-      system.querySelector(".about__planet--four"),
-      system.querySelector(".about__planet--five"),
-      system.querySelector(".about__planet--six")
-    ];
-
-    let startTime = null;
-
-    function getCenter(el) {
-      return {
-        x: el.offsetLeft + el.offsetWidth / 2,
-        y: el.offsetTop + el.offsetHeight / 2
-      };
+      refreshCrawl();
+      window.addEventListener("resize", refreshCrawl, { passive: true });
+      crawlRAF = requestAnimationFrame(animateCrawl);
     }
 
-    function lerp(a, b, t) {
-      return a + (b - a) * t;
-    }
+    function initOrbit() {
+      if (!system || !aliena) return;
 
-    function easeInOut(t) {
-      return 0.5 * (1 - Math.cos(Math.PI * t));
-    }
+      const planets = [
+        system.querySelector(".about__planet--one"),
+        system.querySelector(".about__planet--two"),
+        system.querySelector(".about__planet--three"),
+        system.querySelector(".about__planet--four"),
+        system.querySelector(".about__planet--five"),
+        system.querySelector(".about__planet--six")
+      ].filter(Boolean);
 
-    function orbitPosition(progress, width, height) {
-      const centerX = width / 2;
-      const centerY = height / 2;
-      const radiusX = width * 0.47;
-      const radiusY = height * 0.31;
-      const angle = progress * Math.PI * 2;
+      if (!planets.length) return;
 
-      return {
-        x: centerX + Math.cos(angle) * radiusX,
-        y: centerY + Math.sin(angle) * radiusY,
-        scale: 0.84 + ((Math.sin(angle - Math.PI / 2) + 1) / 2) * 0.34,
-        rotate: Math.cos(angle) * 10,
-        z: Math.sin(angle) > 0 ? 5 : 2
-      };
-    }
+      let startTime = null;
+      let centers = [];
+      let systemWidth = 0;
+      let systemHeight = 0;
 
-    function moveToTarget(from, to, t) {
-      const eased = easeInOut(t);
-      return {
-        x: lerp(from.x, to.x, eased),
-        y: lerp(from.y, to.y, eased),
-        scale: lerp(from.scale, to.scale, eased),
-        rotate: lerp(from.rotate, to.rotate, eased),
-        z: to.z
-      };
-    }
+      function calculateCenters() {
+        systemWidth = system.offsetWidth;
+        systemHeight = system.offsetHeight;
 
-    function render(state) {
-      aliena.style.zIndex = state.z;
-      aliena.style.transform =
-        `translate(-50%, -50%) translate(${state.x - system.offsetWidth / 2}px, ${state.y - system.offsetHeight / 2}px) scale(${state.scale}) rotate(${state.rotate}deg)`;
-    }
-
-    function animate(timestamp) {
-      if (!startTime) startTime = timestamp;
-
-      const width = system.offsetWidth;
-      const height = system.offsetHeight;
-      const centers = planets.map(getCenter);
-
-      const cycle = 22000;
-      const elapsed = (timestamp - startTime) % cycle;
-
-      let state;
-
-      if (elapsed < 9000) {
-        const progress = elapsed / 9000;
-        state = orbitPosition(progress, width, height);
-      } else if (elapsed < 10800) {
-        const from = orbitPosition(1, width, height);
-        const to = { x: centers[0].x, y: centers[0].y, scale: 0.92, rotate: 8, z: 5 };
-        state = moveToTarget(from, to, (elapsed - 9000) / 1800);
-      } else if (elapsed < 12200) {
-        const from = { x: centers[0].x, y: centers[0].y, scale: 0.92, rotate: 8, z: 5 };
-        const to = { x: centers[1].x, y: centers[1].y, scale: 0.84, rotate: -10, z: 5 };
-        state = moveToTarget(from, to, (elapsed - 10800) / 1400);
-      } else if (elapsed < 13600) {
-        const from = { x: centers[1].x, y: centers[1].y, scale: 0.84, rotate: -10, z: 5 };
-        const to = { x: centers[2].x, y: centers[2].y, scale: 0.80, rotate: 10, z: 5 };
-        state = moveToTarget(from, to, (elapsed - 12200) / 1400);
-      } else if (elapsed < 15000) {
-        const from = { x: centers[2].x, y: centers[2].y, scale: 0.80, rotate: 10, z: 5 };
-        const to = { x: centers[3].x, y: centers[3].y, scale: 0.88, rotate: -8, z: 5 };
-        state = moveToTarget(from, to, (elapsed - 13600) / 1400);
-      } else if (elapsed < 16400) {
-        const from = { x: centers[3].x, y: centers[3].y, scale: 0.88, rotate: -8, z: 5 };
-        const to = { x: centers[4].x, y: centers[4].y, scale: 0.76, rotate: 10, z: 5 };
-        state = moveToTarget(from, to, (elapsed - 15000) / 1400);
-      } else if (elapsed < 17800) {
-        const from = { x: centers[4].x, y: centers[4].y, scale: 0.76, rotate: 10, z: 5 };
-        const to = { x: centers[5].x, y: centers[5].y, scale: 0.86, rotate: -8, z: 5 };
-        state = moveToTarget(from, to, (elapsed - 16400) / 1400);
-      } else {
-        const from = { x: centers[5].x, y: centers[5].y, scale: 0.86, rotate: -8, z: 5 };
-        const to = orbitPosition(0, width, height);
-        state = moveToTarget(from, to, (elapsed - 17800) / 4200);
+        centers = planets.map((el) => ({
+          x: el.offsetLeft + el.offsetWidth / 2,
+          y: el.offsetTop + el.offsetHeight / 2
+        }));
       }
 
-      render(state);
-      requestAnimationFrame(animate);
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      function easeInOut(t) {
+        return 0.5 * (1 - Math.cos(Math.PI * t));
+      }
+
+      function orbitPosition(progress) {
+        const centerX = systemWidth / 2;
+        const centerY = systemHeight / 2;
+        const radiusX = systemWidth * 0.47;
+        const radiusY = systemHeight * 0.31;
+        const angle = progress * Math.PI * 2;
+
+        return {
+          x: centerX + Math.cos(angle) * radiusX,
+          y: centerY + Math.sin(angle) * radiusY,
+          scale: 0.84 + ((Math.sin(angle - Math.PI / 2) + 1) / 2) * 0.34,
+          rotate: Math.cos(angle) * 10,
+          z: Math.sin(angle) > 0 ? 5 : 2
+        };
+      }
+
+      function moveToTarget(from, to, t) {
+        const eased = easeInOut(t);
+        return {
+          x: lerp(from.x, to.x, eased),
+          y: lerp(from.y, to.y, eased),
+          scale: lerp(from.scale, to.scale, eased),
+          rotate: lerp(from.rotate, to.rotate, eased),
+          z: to.z
+        };
+      }
+
+      function render(state) {
+        aliena.style.zIndex = state.z;
+        aliena.style.transform =
+          `translate(-50%, -50%) translate(${state.x - systemWidth / 2}px, ${state.y - systemHeight / 2}px) scale(${state.scale}) rotate(${state.rotate}deg)`;
+      }
+
+      function animateOrbit(timestamp) {
+        if (!startTime) startTime = timestamp;
+
+        const cycle = 22000;
+        const elapsed = (timestamp - startTime) % cycle;
+
+        let state;
+
+        if (elapsed < 9000) {
+          const progress = elapsed / 9000;
+          state = orbitPosition(progress);
+        } else if (elapsed < 10800) {
+          const from = orbitPosition(1);
+          const to = { x: centers[0].x, y: centers[0].y, scale: 0.92, rotate: 8, z: 5 };
+          state = moveToTarget(from, to, (elapsed - 9000) / 1800);
+        } else if (elapsed < 12200) {
+          const from = { x: centers[0].x, y: centers[0].y, scale: 0.92, rotate: 8, z: 5 };
+          const to = { x: centers[1].x, y: centers[1].y, scale: 0.84, rotate: -10, z: 5 };
+          state = moveToTarget(from, to, (elapsed - 10800) / 1400);
+        } else if (elapsed < 13600) {
+          const from = { x: centers[1].x, y: centers[1].y, scale: 0.84, rotate: -10, z: 5 };
+          const to = { x: centers[2].x, y: centers[2].y, scale: 0.80, rotate: 10, z: 5 };
+          state = moveToTarget(from, to, (elapsed - 12200) / 1400);
+        } else if (elapsed < 15000) {
+          const from = { x: centers[2].x, y: centers[2].y, scale: 0.80, rotate: 10, z: 5 };
+          const to = { x: centers[3].x, y: centers[3].y, scale: 0.88, rotate: -8, z: 5 };
+          state = moveToTarget(from, to, (elapsed - 13600) / 1400);
+        } else if (elapsed < 16400) {
+          const from = { x: centers[3].x, y: centers[3].y, scale: 0.88, rotate: -8, z: 5 };
+          const to = { x: centers[4].x, y: centers[4].y, scale: 0.76, rotate: 10, z: 5 };
+          state = moveToTarget(from, to, (elapsed - 15000) / 1400);
+        } else if (elapsed < 17800) {
+          const from = { x: centers[4].x, y: centers[4].y, scale: 0.76, rotate: 10, z: 5 };
+          const to = { x: centers[5].x, y: centers[5].y, scale: 0.86, rotate: -8, z: 5 };
+          state = moveToTarget(from, to, (elapsed - 16400) / 1400);
+        } else {
+          const from = { x: centers[5].x, y: centers[5].y, scale: 0.86, rotate: -8, z: 5 };
+          const to = orbitPosition(0);
+          state = moveToTarget(from, to, (elapsed - 17800) / 4200);
+        }
+
+        render(state);
+        orbitRAF = requestAnimationFrame(animateOrbit);
+      }
+
+      calculateCenters();
+      window.addEventListener("resize", calculateCenters, { passive: true });
+      orbitRAF = requestAnimationFrame(animateOrbit);
     }
 
-    requestAnimationFrame(animate);
+    setTimeout(() => {
+      initCrawl();
+      initOrbit();
+    }, 250);
+
+    window.addEventListener("beforeunload", () => {
+      if (crawlRAF) cancelAnimationFrame(crawlRAF);
+      if (orbitRAF) cancelAnimationFrame(orbitRAF);
+    });
   });
 </script>
 </body>

@@ -24,6 +24,61 @@
   />
 
   <title>Codess</title>
+
+  <style>
+    html.intro-lock,
+    body.intro-lock {
+      overflow: hidden;
+      height: 100vh;
+      overscroll-behavior: none;
+    }
+
+    .intro-status {
+      position: absolute;
+      left: 50%;
+      bottom: 42px;
+      transform: translateX(-50%);
+      z-index: 12;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(105, 255, 186, 0.28);
+      background: rgba(3, 7, 18, 0.72);
+      backdrop-filter: blur(10px);
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #69ffba;
+      box-shadow:
+        0 0 22px rgba(105, 255, 186, 0.12),
+        inset 0 0 18px rgba(105, 255, 186, 0.05);
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .intro-status__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #69ffba;
+      box-shadow: 0 0 14px rgba(105, 255, 186, 0.85);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 680px) {
+      .intro-status {
+        bottom: 24px;
+        padding: 10px 14px;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+        max-width: calc(100% - 28px);
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body class="page">
@@ -66,6 +121,11 @@
           and SEO crafted to stand out.
         </p>
       </div>
+    </div>
+
+    <div class="intro-status" id="intro-status" aria-live="polite">
+      <span class="intro-status__dot"></span>
+      <span>Initializing Transport...</span>
     </div>
 
     <div class="scanline" aria-hidden="true"></div>
@@ -194,6 +254,10 @@
   setInterval(makeBeamCode, 140);
 
   window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+    document.documentElement.classList.add("intro-lock");
+    document.body.classList.add("intro-lock");
+
     const isMobile = window.matchMedia("(max-width: 680px)").matches;
 
     const shipIntroYFrom = isMobile ? 80 : 120;
@@ -215,10 +279,12 @@
     gsap.set(".hero__beam-code", { opacity: 0, scale: 0.9 });
     gsap.set(".hero__prebeam-glow", { opacity: 0, scale: 0.8 });
     gsap.set(".hero__ship-wrap", { xPercent: -50, yPercent: -50 });
+    gsap.set("#intro-status", { opacity: 0, y: 12 });
 
     tl.set(".hero__copy", { opacity: 0, y: 30 })
       .fromTo(".hero", { opacity: 0 }, { opacity: 1, duration: 1.1 })
       .fromTo(".hero__bg", { scale: 1.04 }, { scale: 1, duration: 2.2 }, 0)
+      .to("#intro-status", { opacity: 1, y: 0, duration: 0.6 }, 0.2)
 
       .fromTo(
         ".hero__ship-wrap",
@@ -282,6 +348,12 @@
         duration: 0.8
       }, "-=1.8")
 
+      .to("#intro-status", {
+        opacity: 0,
+        y: -8,
+        duration: 0.5
+      }, "-=0.8")
+
       .to({}, { duration: 1.2 })
 
       .to(".hero__transport-flash", {
@@ -307,6 +379,9 @@
       }, "-=0.1")
 
       .call(() => {
+        document.documentElement.classList.remove("intro-lock");
+        document.body.classList.remove("intro-lock");
+
         const interior = document.querySelector(".interior");
         if (interior) {
           interior.scrollIntoView({
@@ -344,6 +419,14 @@
     gsap.to(".command__dot", {
       opacity: 0.45,
       duration: 1,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    gsap.to(".intro-status__dot", {
+      opacity: 0.35,
+      duration: 0.8,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut"

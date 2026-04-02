@@ -111,8 +111,11 @@
 }
 
 .hero-panel {
-  padding: 80px 20px 70px;
+  padding: 100px 20px 400px;
   position: relative;
+  background: url("../images/cockpit.png") no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-panel__inner {
@@ -335,7 +338,7 @@
 }
 
 .mission--upgraded {
-  margin-top: 14px;
+  margin-top: 0px;
 }
 
 .mission-text {

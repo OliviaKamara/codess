@@ -22,6 +22,12 @@ body {
   color: var(--text);
   scroll-behavior: smooth;
 }
+html.intro-lock,
+body.intro-lock {
+  overflow: hidden;
+  height: 100vh;
+  overscroll-behavior: none;
+}
 
 body {
   font-family: "Inter", sans-serif;
@@ -110,6 +116,8 @@ a {
     drop-shadow(0 0 28px rgba(120, 255, 220, 0.08))
     drop-shadow(0 0 18px rgba(255, 72, 202, 0.06));
   opacity: 0.98;
+  transform: translateX(-3%);
+
 }
 
 .hero__overlay {
