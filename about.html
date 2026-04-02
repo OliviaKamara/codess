@@ -3,24 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About Codess" />
+
+  <title>Olivia Kamara | About Codess Founder, Web Designer & Developer</title>
+
+  <meta
+    name="description"
+    content="Learn about Olivia Kamara, founder of Codess — a web designer, developer, and creative strategist building custom websites, branding, and SEO-driven digital experiences for businesses across the United States."
+  />
   <meta name="author" content="Olivia Kamara" />
+  <meta name="robots" content="index, follow" />
   <meta
     name="keywords"
-    content="Codess, Olivia Kamara, custom websites, branding, animation, SEO, Michigan web developer"
+    content="Olivia Kamara, Codess, Olivia Kamara web designer, Olivia Kamara developer, Olivia Kamara Codess, custom websites, branding, animation, SEO, web designer, website developer"
   />
+
+  <link rel="canonical" href="https://www.codess.dev/about.html" />
   <link rel="icon" href="codess_final_favicon.ico" />
   <link rel="stylesheet" href="./pages/about.css" />
+
+  <meta property="og:title" content="Olivia Kamara | About Codess Founder, Web Designer & Developer" />
+  <meta
+    property="og:description"
+    content="Meet Olivia Kamara, founder of Codess — building custom websites, branding, and SEO-driven digital experiences for businesses across the United States."
+  />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://www.codess.dev/about.html" />
+  <meta property="og:image" content="https://www.codess.dev/images/webheadshotfinal.png" />
+  <meta property="og:site_name" content="Codess" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Olivia Kamara | About Codess Founder, Web Designer & Developer" />
+  <meta
+    name="twitter:description"
+    content="Meet Olivia Kamara, founder of Codess — building custom websites, branding, and SEO-driven digital experiences for businesses across the United States."
+  />
+  <meta name="twitter:image" content="https://www.codess.dev/images/webheadshotfinal.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
     rel="stylesheet"
   />
-  <title>About Codess</title>
 
   <style>
-    /* Small performance overrides so you do not have to edit CSS separately yet */
     .about__crawl,
     .about__aliena,
     .about__portrait-wrap,
@@ -59,7 +85,7 @@
         <img
           class="header__logo"
           src="./images/Logo 2025.gif"
-          alt="Codess Logo"
+          alt="Codess logo"
         />
       </a>
     </div>
@@ -91,14 +117,14 @@
   <span class="about__shooting about__shooting--three"></span>
   <span class="about__shooting about__shooting--four"></span>
 
-  <h1 class="content__heading">The Story Behind Codess</h1>
+  <h1 class="content__heading">Olivia Kamara | Founder of Codess</h1>
 
   <div class="about__hero">
     <div class="about__space-column">
       <div class="about__portrait-wrap" id="aboutSystem">
         <img
           src="./images/webheadshotfinal.png"
-          alt="Olivia Kamara"
+          alt="Olivia Kamara, founder of Codess"
           class="about__portrait"
           width="320"
           height="320"
@@ -115,7 +141,7 @@
 
         <img
           src="./images/alien.png"
-          alt="Aliena"
+          alt="Aliena, Codess mascot"
           class="about__aliena"
           id="aboutAliena"
           width="72"
@@ -128,7 +154,13 @@
     <div class="about__crawl-panel">
       <div class="about__crawl-wrap" id="aboutCrawlWrap">
         <div class="about__crawl" id="aboutCrawl">
-          <h3 class="about__crawl-title">A Transmission From The Captain Of Codess</h3>
+          <h2 class="about__crawl-title">The Story Behind Olivia Kamara & Codess</h2>
+
+          <p>
+            I’m Olivia Kamara, founder of Codess — a web designer, developer,
+            and creative strategist building custom websites for brands that want
+            to stand out.
+          </p>
 
           <p>
             I built Codess as one last attempt at creating a life I actually wanted,
@@ -174,6 +206,11 @@
             because it changes how something is experienced. When it’s done right,
             it adds depth. It makes things feel alive. It gives a brand presence
             instead of just a page.
+          </p>
+
+          <p>
+            Through Codess, I build custom websites, branding systems, and SEO-driven
+            digital experiences for businesses across the United States.
           </p>
         </div>
       </div>
@@ -246,6 +283,18 @@
 </footer>
 
 <script src="./scripts/index.js"></script>
+
+<script>
+  const hamburger = document.querySelector(".hamburger-menu");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+    });
+  }
+</script>
 
 <script>
   window.addEventListener("load", () => {
@@ -419,6 +468,27 @@
       if (orbitRAF) cancelAnimationFrame(orbitRAF);
     });
   });
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Olivia Kamara",
+    "url": "https://www.codess.dev/about.html",
+    "image": "https://www.codess.dev/images/webheadshotfinal.png",
+    "jobTitle": "Founder of Codess, Web Designer, Developer, and Creative Strategist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Codess"
+    },
+    "sameAs": [
+      "https://www.instagram.com/codess.tech/",
+      "https://github.com/OliviaKamara?tab=repositories",
+      "https://www.linkedin.com/in/olivia-kamara-76820530b",
+      "https://www.facebook.com/profile.php?id=61571973302224"
+    ]
+  }
 </script>
 </body>
 </html>
