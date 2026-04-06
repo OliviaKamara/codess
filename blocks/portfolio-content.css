@@ -228,6 +228,7 @@
   text-align: center;
   border: 1px solid rgba(157, 233, 245, 0.14);
   border-radius: 28px;
+  box-sizing: border-box;
   background:
     radial-gradient(circle at top, rgba(240, 8, 248, 0.08), transparent 42%),
     linear-gradient(180deg, rgba(7, 16, 34, 0.34), rgba(7, 16, 34, 0.48));
@@ -679,21 +680,27 @@
 }
 
 @media (max-width: 640px) {
-  .creations-page {
-    width: calc(100% - 24px);
-    padding-top: 1.5rem;
-  }
-
   .hero {
-    min-height: 78vh;
-    padding: 96px 16px 64px;
-    background-position: center center;
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(100vh - 120px);
+    padding: 40px 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .hero__content {
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+    margin: 0 auto;
     padding: 20px 14px 18px;
     border-radius: 22px;
     backdrop-filter: blur(3px);
+    box-sizing: border-box;
+    animation: none;
   }
 
   .hero__matrix {
