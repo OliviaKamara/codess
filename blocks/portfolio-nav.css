@@ -16,7 +16,10 @@
   flex-wrap: wrap;
   padding: 20px 40px;
   width: 100%;
-  z-index: 100;
+  min-height: 140px;
+  z-index: 200;
+  background: url("../images/starsnav.gif");
+  background-size: cover;
 }
 
 .nav__group {

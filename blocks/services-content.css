@@ -36,7 +36,7 @@
 
 .services {
   position: relative;
-  max-width: 1180px;
+width: 100%;
   margin: 0 auto;
   padding: 96px 20px 72px;
   text-align: center;
@@ -47,7 +47,7 @@
     linear-gradient(rgba(7, 16, 32, 0.72), rgba(7, 16, 32, 0.88)),
     url("../images/space-7710978_1280.jpg") no-repeat center center;
   background-size: cover;
-  border-radius: 28px;
+
 }
 
 .services__eyebrow {
