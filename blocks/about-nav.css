@@ -1,26 +1,29 @@
 /* =========================
    GLOBAL NAV
-   Use this exact block in:
-   about.css
-   contact.css
-   hq.css
-   portfolio.css
-   services.css
 ========================= */
 
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   position: relative;
-  flex-wrap: wrap;
-  padding: 20px 40px;
+
   width: 100%;
   min-height: 140px;
+
+  padding: 20px 40px;
+
+  box-sizing: border-box;
+
   z-index: 200;
-  background: url("../images/starsnav.gif");
-  background-size: cover;
+
+  background: url("../images/starsnav.gif") center / cover no-repeat;
 }
+
+/* =========================
+   DESKTOP NAV GROUPS
+========================= */
 
 .nav__group {
   display: flex;
@@ -28,114 +31,213 @@
   z-index: 1;
 }
 
+/* =========================
+   NAV LINKS
+========================= */
+
 .nav__links {
   display: flex;
   justify-content: space-around;
+
   gap: 500px;
+
   list-style-type: none;
+
   margin: 0;
   padding: 0;
+
   z-index: 1100;
 }
 
 .nav__link {
   text-decoration: none;
+
   color: #9de9f5;
+
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+
   transition:
     color 0.3s ease,
     transform 0.3s ease,
     text-shadow 0.3s ease,
     background-color 0.3s ease,
     border-color 0.3s ease;
-  font-family: "Orbitron", sans-serif;
-  font-weight: 500;
+
   z-index: 1000;
 }
 
 .nav__link:hover {
-  text-shadow: 0 0 2px #39ff14, 0 0 6px #00ff73;
+  text-shadow:
+    0 0 2px #39ff14,
+    0 0 6px #00ff73;
+
   transform: scale(1.05);
 }
 
+/* =========================
+   HAMBURGER
+========================= */
+
 .hamburger-menu {
   display: none;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: 5px;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 0;
+  margin: 0;
+
   background: none;
   border: none;
+
   cursor: pointer;
+
   z-index: 1201;
-  padding: 12px 0;
-  margin: 0;
 }
 
 .hamburger-line {
+  display: block;
+
   width: 25px;
   height: 3px;
+
   background-color: #9de9f5;
   border-radius: 999px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
-/* =========================
-   MOBILE ONLY
-========================= */
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media screen and (max-width: 1250px) {
+
+  /* -------------------------
+     HIDE DESKTOP NAV
+  ------------------------- */
+
   .desktop-only {
     display: none !important;
   }
 
-  .mobile-only {
-    display: block;
-  }
+  /*
+    IMPORTANT:
+    Don't use display:block here because the hamburger
+    specifically needs display:flex.
+  */
+
+  /* -------------------------
+     NAV LAYOUT
+  ------------------------- */
 
   .nav {
+    display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 20px 10px;
-    gap: 10px;
+
+    width: 100%;
+    min-height: 0;
+
+    padding: 40px 20px 20px;
+
+    gap: 12px;
+
+    box-sizing: border-box;
   }
 
+  /* -------------------------
+     LOGO POSITION
+  ------------------------- */
+
   .header__logo_container {
+    order: 1;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: 100%;
-    order: 1;
-    position: relative;
-    z-index: 1200;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
   }
 
-  .header__logo {
-    display: block;
-    max-width: 140px;
-    height: auto;
+  .header__logo_container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    margin: 0 auto;
   }
+
+  /*
+    Logo SIZE is controlled by about-header.css.
+    Do NOT redefine its width here.
+  */
+
+  /* -------------------------
+     HAMBURGER POSITION
+  ------------------------- */
 
   .hamburger-menu {
-    display: flex;
     order: 2;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     width: 48px;
     height: 48px;
+
+    margin: 0 auto;
     padding: 0;
+
+    flex-shrink: 0;
+
     z-index: 1201;
   }
 
+  /* -------------------------
+     MOBILE DROPDOWN
+  ------------------------- */
+
   .nav__links {
     order: 3;
+
+    display: none;
+
     width: 100%;
     max-width: 320px;
-    display: none;
+
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
+
     gap: 10px;
-    margin: 0;
+
+    margin: 0 auto;
     padding: 10px 0 0;
+
     list-style: none;
+
+    box-sizing: border-box;
   }
 
   .nav__links.active {
@@ -148,29 +250,47 @@
 
   .nav__links .nav__link {
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     width: 100%;
     min-height: 50px;
+
     padding: 0 16px;
+
+    box-sizing: border-box;
+
     border-radius: 14px;
+
     border: 1px solid rgba(157, 233, 245, 0.14);
+
     background: rgba(14, 33, 60, 0.88);
+
     color: #d9fbff;
+
     text-transform: uppercase;
     letter-spacing: 0.08em;
+
     font-size: 0.95rem;
+
     text-shadow: none;
     transform: none;
-    box-sizing: border-box;
   }
 
   .nav__links .nav__link:hover {
     transform: none;
+
     text-shadow: 0 0 2px #39ff14;
+
     border-color: rgba(57, 255, 20, 0.32);
+
     background: rgba(14, 33, 60, 1);
   }
+
+  /* -------------------------
+     HAMBURGER → X ANIMATION
+  ------------------------- */
 
   .hamburger-menu.active .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -185,9 +305,10 @@
   }
 }
 
-/* =========================
+/* =========================================================
    DESKTOP SAFETY
-========================= */
+========================================================= */
+
 @media screen and (min-width: 1251px) {
   .mobile-only {
     display: none !important;

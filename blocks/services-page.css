@@ -1,17 +1,15 @@
 html,
 body {
+  width: 100%;
   max-width: 100%;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
 .page {
+  width: 100%;
   background-color: #0f2444;
   min-height: 100vh;
   max-width: 100%;
-}
-
-@media screen and (max-width: 627px) {
-  .page {
-    background-color: #0f2444;
-  }
 }

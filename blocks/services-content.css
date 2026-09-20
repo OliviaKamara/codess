@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @keyframes pulseGlow {
   0% {
     box-shadow:
@@ -36,7 +42,8 @@
 
 .services {
   position: relative;
-width: 100%;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 96px 20px 72px;
   text-align: center;
@@ -231,12 +238,20 @@ width: 100%;
   }
 
   .services__title {
-    font-size: clamp(2.2rem, 11vw, 3.3rem);
-    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 24px;
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.05;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .services__intro {
+    width: 100%;
+    max-width: 100%;
     font-size: 0.98rem;
+    line-height: 1.7;
     margin-bottom: 40px;
   }
 
